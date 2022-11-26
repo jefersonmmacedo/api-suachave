@@ -4,6 +4,9 @@ import * as dotenv from "dotenv";
 export const collections: { 
   company?:mongoDB.Collection,
   account?:mongoDB.Collection,
+  myPlain?:mongoDB.Collection,
+  plains?:mongoDB.Collection,
+  payments?:mongoDB.Collection,
  } = {}
 
 export async function connectToDatabase() {
@@ -22,6 +25,22 @@ export async function connectToDatabase() {
             const accountCollection: mongoDB.Collection = db.collection(process.env.ACCOUNT_COLLECTION_NAME);
             collections.account = accountCollection;
             // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${favoriteCollection.collectionName}`);
+
+
+            const paymentsCollection: mongoDB.Collection = db.collection(process.env.PAYMENTS_COLLECTION_NAME);
+            collections.payments = paymentsCollection;
+            // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${notificationCollection.collectionName}`);
+      
+            // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${notificationCollection.collectionName}`);
+            const myPlainCollection: mongoDB.Collection = db.collection(process.env.MYPLAIN_COLLECTION_NAME);
+            collections.myPlain = myPlainCollection;
+            // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${notificationCollection.collectionName}`);
+      
+            const plainsCollection: mongoDB.Collection = db.collection(process.env.PLAINS_COLLECTION_NAME);
+            collections.plains = plainsCollection;
+            // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${notificationCollection.collectionName}`);
+      
+      
 
       }
   
