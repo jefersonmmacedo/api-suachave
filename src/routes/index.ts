@@ -17,6 +17,9 @@ import { SessionClientRouter } from "./sessions/sessions.routes";
 import { financerRoutes } from "./financer/financer.routes";
 import { paymentRentRoutes } from "./plains/paymentRent.routes";
 import { mailRoutes } from "./mail/mail";
+import { AcessRouter } from "./Acess/acess.routes";
+import { BrokerRouter } from "./Broker/broker.routes";
+import { AlertRouter } from "./Alert/alert.routes";
 
 const router = Router();
 
@@ -40,6 +43,9 @@ connectToDatabase()
     router.use("/notification", notificationsRoutes);
     router.use("/clientCompany", clientCompanyRoutes);
     router.use("/financer", financerRoutes);
+    router.use("/acess", AcessRouter);
+    router.use("/broker", BrokerRouter);
+    router.use("/alert", AlertRouter);
   }).catch((error: Error) => {
     console.error("Database connection failed", error);
     process.exit();

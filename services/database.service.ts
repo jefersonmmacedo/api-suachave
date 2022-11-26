@@ -17,6 +17,7 @@ export const collections: {
   paymentRent?:mongoDB.Collection,
   financer?:mongoDB.Collection,
   notification?:mongoDB.Collection,
+  alert?:mongoDB.Collection,
  } = {}
 
 export async function connectToDatabase() {
@@ -94,5 +95,9 @@ export async function connectToDatabase() {
       const notificationCollection: mongoDB.Collection = db.collection(process.env.NOTIFICATION_COLLECTION_NAME);
       collections.notification = notificationCollection;
       // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${notificationCollection.collectionName}`);
+
+      const alertCollection: mongoDB.Collection = db.collection(process.env.ALERT_COLLECTION_NAME);
+      collections.alert = alertCollection;
+      // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${alertCollection.collectionName}`);
       }
   
