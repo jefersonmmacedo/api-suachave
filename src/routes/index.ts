@@ -16,12 +16,14 @@ import { SchedulingRouter } from "./scheduling/scheduling.routes";
 import { SessionClientRouter } from "./sessions/sessions.routes";
 import { financerRoutes } from "./financer/financer.routes";
 import { paymentRentRoutes } from "./plains/paymentRent.routes";
+import { mailRoutes } from "./mail/mail";
 
 const router = Router();
 
 
 connectToDatabase()
   .then(() => {
+    router.use("/mail", mailRoutes);
     router.use("/company", CompanyRouter)
     router.use("/client", AccountClientRouter);
     router.use("/session", SessionClientRouter);
