@@ -2,11 +2,20 @@ import { Router } from "express";
 import { connectToDatabase } from "../../services/database.service";
 import { AccountClientRouter } from "./accounts/client.routes";
 import { CompanyRouter } from "./accounts/company.routes";
+import { bankRoutes } from "./bank/bank.routes";
+import { clientCompanyRoutes } from "./clientCompany/clientCompany.routes";
+import { contactRoutes } from "./contact/contact.routes";
+import { favoriteRoutes } from "./favorite/favorite.routes";
+import { negotiationsRoutes } from "./negotiations/negotiations.routes";
+import { notificationsRoutes } from "./notification/notification.routes";
 import { MyPlainRoutes } from "./plains/myplain.routes";
 import { paymentsRoutes } from "./plains/payments.routes";
 import { plainsRoutes } from "./plains/plains.routes";
 import { PropertyRoutes } from "./property/property.routes";
+import { SchedulingRouter } from "./scheduling/scheduling.routes";
 import { SessionClientRouter } from "./sessions/sessions.routes";
+import { financerRoutes } from "./financer/financer.routes";
+import { paymentRentRoutes } from "./plains/paymentRent.routes";
 
 const router = Router();
 
@@ -20,6 +29,15 @@ connectToDatabase()
     router.use("/plains", plainsRoutes);
     router.use("/myplain", MyPlainRoutes);
     router.use("/payments", paymentsRoutes);
+    router.use("/paymentRent", paymentRentRoutes);
+    router.use("/favorite", favoriteRoutes);
+    router.use("/scheduling", SchedulingRouter);
+    router.use("/contact", contactRoutes);
+    router.use("/bank", bankRoutes);
+    router.use("/negotiations", negotiationsRoutes);
+    router.use("/notification", notificationsRoutes);
+    router.use("/clientCompany", clientCompanyRoutes);
+    router.use("/financer", financerRoutes);
   }).catch((error: Error) => {
     console.error("Database connection failed", error);
     process.exit();
