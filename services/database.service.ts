@@ -4,6 +4,7 @@ import * as dotenv from "dotenv";
 export const collections: { 
   company?:mongoDB.Collection,
   account?:mongoDB.Collection,
+  property?:mongoDB.Collection,
   myPlain?:mongoDB.Collection,
   plains?:mongoDB.Collection,
   payments?:mongoDB.Collection,
@@ -25,6 +26,11 @@ export async function connectToDatabase() {
             const accountCollection: mongoDB.Collection = db.collection(process.env.ACCOUNT_COLLECTION_NAME);
             collections.account = accountCollection;
             // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${favoriteCollection.collectionName}`);
+
+                  // property
+      const propertyCollection: mongoDB.Collection = db.collection(process.env.PROPERTY_COLLECTION_NAME);
+      collections.property = propertyCollection;
+      // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${favoriteCollection.collectionName}`);
 
 
             const paymentsCollection: mongoDB.Collection = db.collection(process.env.PAYMENTS_COLLECTION_NAME);
