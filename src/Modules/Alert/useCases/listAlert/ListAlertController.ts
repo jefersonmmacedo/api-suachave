@@ -1,15 +1,15 @@
 import { Request, Response } from "express";
 import { collections } from "../../../../../services/database.service";
 
-import { ListFavoriteUseCase } from "./ListAlertUseCase";
+import { ListAlertUseCase } from "./ListAlertUseCase";
 
-class ListFavoriteController {
-  constructor(private listFavoriteUseCase: ListFavoriteUseCase) {
+class ListAlertController {
+  constructor(private listAlertUseCase: ListAlertUseCase) {
     ("");
   }
 
   async handle(req: Request, res: Response) {
-   await collections.favorite.find().toArray(function(err, result){
+   await collections.alert.find().toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {
@@ -22,4 +22,4 @@ class ListFavoriteController {
   }
 }
 
-export { ListFavoriteController };
+export { ListAlertController };

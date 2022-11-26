@@ -8,10 +8,10 @@ class CreateAlertController {
   }
 
   handle(req: Request, res: Response): Response {
-    const { id, idProperty, type } = req.body;
+    const { id, idClient, city, uf, type, subtype, bedroom, suites, restroom, garage, } = req.body;
 
     this.createAlertUseCase.execute({
-      id, idProperty, type
+      id, idClient, city, uf, type, subtype, bedroom, suites, restroom, garage,
     });
 
 

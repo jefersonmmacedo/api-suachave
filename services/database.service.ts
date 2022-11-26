@@ -18,6 +18,8 @@ export const collections: {
   financer?:mongoDB.Collection,
   notification?:mongoDB.Collection,
   alert?:mongoDB.Collection,
+  access?:mongoDB.Collection,
+  broker?:mongoDB.Collection,
  } = {}
 
 export async function connectToDatabase() {
@@ -99,5 +101,13 @@ export async function connectToDatabase() {
       const alertCollection: mongoDB.Collection = db.collection(process.env.ALERT_COLLECTION_NAME);
       collections.alert = alertCollection;
       // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${alertCollection.collectionName}`);
+
+      const accessCollection: mongoDB.Collection = db.collection(process.env.ACCESS_COLLECTION_NAME);
+      collections.access = accessCollection;
+      // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${accessCollection.collectionName}`);
+
+      const brokerCollection: mongoDB.Collection = db.collection(process.env.BROKER_COLLECTION_NAME);
+      collections.broker = brokerCollection;
+      // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${brokerCollection.collectionName}`);
       }
   
