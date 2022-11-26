@@ -18,8 +18,10 @@ import { paymentRentRoutes } from "./plains/paymentRent.routes";
 import { paymentsRoutes } from "./plains/payments.routes";
 import { plainsRoutes } from "./plains/plains.routes";
 import { PropertyRoutes } from "./property/property.routes";
+import { groupsRecuperation } from "./recuperation/recuperation.routes";
 import { SchedulingRouter } from "./scheduling/scheduling.routes";
 import { SessionClientRouter } from "./sessions/sessions.routes";
+import { ViewPropertyRoutes } from "./viewProperty/viewProperty.routes";
 
 
 const router = Router();
@@ -47,6 +49,8 @@ connectToDatabase()
     router.use("/acess", AcessRouter);
     router.use("/broker", BrokerRouter);
     router.use("/alert", AlertRouter);
+    router.use("/recuperation", groupsRecuperation);
+    router.use("/viewproperty", ViewPropertyRoutes);
   }).catch((error: Error) => {
     console.error("Database connection failed", error);
     process.exit();

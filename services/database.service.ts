@@ -20,6 +20,8 @@ export const collections: {
   alert?:mongoDB.Collection,
   access?:mongoDB.Collection,
   broker?:mongoDB.Collection,
+  recuperation?:mongoDB.Collection,
+  viewProperty?:mongoDB.Collection,
  } = {}
 
 export async function connectToDatabase() {
@@ -109,5 +111,15 @@ export async function connectToDatabase() {
       const brokerCollection: mongoDB.Collection = db.collection(process.env.BROKER_COLLECTION_NAME);
       collections.broker = brokerCollection;
       // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${brokerCollection.collectionName}`);
+
+      
+      const viewPropertyCollection: mongoDB.Collection = db.collection(process.env.VIEWPROPERTY_COLLECTION_NAME);
+      collections.viewProperty = viewPropertyCollection;
+      // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${notificationCollection.collectionName}`);
+
+      const recuperationCollection: mongoDB.Collection = db.collection(process.env.RECUPERATION_COLLECTION_NAME);
+      collections.recuperation = recuperationCollection;
+      // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${notificationCollection.collectionName}`);
+      
       }
   
