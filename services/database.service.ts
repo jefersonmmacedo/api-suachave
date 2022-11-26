@@ -8,6 +8,7 @@ export const collections: {
   myPlain?:mongoDB.Collection,
   plains?:mongoDB.Collection,
   payments?:mongoDB.Collection,
+  favorite?:mongoDB.Collection,
  } = {}
 
 export async function connectToDatabase() {
@@ -46,7 +47,10 @@ export async function connectToDatabase() {
             collections.plains = plainsCollection;
             // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${notificationCollection.collectionName}`);
       
-      
+             // Favorite
+      const favoriteCollection: mongoDB.Collection = db.collection(process.env.FAVORITE_COLLECTION_NAME);
+      collections.favorite = favoriteCollection;
+      // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${favoriteCollection.collectionName}`);
 
       }
   
