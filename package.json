@@ -1,7 +1,7 @@
 {
   "name": "api-suachave",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.js",
   "author": "Jeferson Macedo <jefersonmacedowgf@gmail.com> (https://github.com/jefersonmmacedo)",
   "license": "MIT",
   "type": "module",
