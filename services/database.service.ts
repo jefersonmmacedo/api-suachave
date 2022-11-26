@@ -3,6 +3,7 @@ import * as dotenv from "dotenv";
 
 export const collections: { 
   company?:mongoDB.Collection,
+  account?:mongoDB.Collection,
  } = {}
 
 export async function connectToDatabase() {
@@ -16,6 +17,11 @@ export async function connectToDatabase() {
       const companyCollection: mongoDB.Collection = db.collection(process.env.COMPANY_COLLECTION_NAME);
       collections.company = companyCollection;
       console.log(`Successfully connected to database: ${db.databaseName} and collection: ${companyCollection.collectionName}`);
+
+            // client
+            const accountCollection: mongoDB.Collection = db.collection(process.env.ACCOUNT_COLLECTION_NAME);
+            collections.account = accountCollection;
+            // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${favoriteCollection.collectionName}`);
 
       }
   
