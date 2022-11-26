@@ -1,9 +1,9 @@
 import { server } from "./http";
 import "./websocket"
 
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 3333;
 
-server.listen(PORT, () => {
-  console.log(`Server initialized! Access the link: http://localhost:${PORT}`);
+server.listen(port, () => {
+  console.log(`Server initialized! Access the link: http://localhost:${port}`);
   console.log(process.env.STRINGCONNECTION);
 });
