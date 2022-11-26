@@ -10,23 +10,6 @@ interface Rooms {
   idFriend: string;
 }
 
-interface RoomUser  {
-  socketId: string;
-  room: string;
-  idAccount: string;
-  idFriend: string;
-}
-interface UsersOline  {
-  socketId: string;
-  idAccount: string;
-  username: string;
-  nickname: string;
-  avatar: string;
-  lat: number;
-  long: number;
-  equalCity: boolean;
-}
-
 interface Messages {
   room: string;
   idAccount: string;
@@ -40,8 +23,6 @@ interface Messages {
   id: string;
 }
 
-const users: RoomUser[] = [];
-const usersOnline: UsersOline[] = [];
 const messages: Messages[] = [];
 const rooms: Rooms[] = [];
 
