@@ -20,17 +20,10 @@ app.use(bodyParser.urlencoded({extends: true}));
 app.use(express.json());
 app.use(router);
 
-const io = new Server(server, {
-  cors: {
-    origin: ["https://www.suachave.com.br", "https://adm.suachave.com.br", "http://localhost:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE","PATCH"],
-    credentials: true
-  }
-});
 
 
 app.get("/", (req, res) => {
   return res.json("app inicialized!");
 });
 
-export {server, io}
+export {server}
