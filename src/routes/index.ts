@@ -2,24 +2,25 @@ import { Router } from "express";
 import { connectToDatabase } from "../../services/database.service";
 import { AccountClientRouter } from "./accounts/client.routes";
 import { CompanyRouter } from "./accounts/company.routes";
+import { AcessRouter } from "./Acess/acess.routes";
+import { AlertRouter } from "./Alert/alert.routes";
 import { bankRoutes } from "./bank/bank.routes";
+import { BrokerRouter } from "./Broker/broker.routes";
 import { clientCompanyRoutes } from "./clientCompany/clientCompany.routes";
 import { contactRoutes } from "./contact/contact.routes";
 import { favoriteRoutes } from "./favorite/favorite.routes";
+import { financerRoutes } from "./financer/financer.routes";
+import { mailRoutes } from "./mail/mail";
 import { negotiationsRoutes } from "./negotiations/negotiations.routes";
 import { notificationsRoutes } from "./notification/notification.routes";
 import { MyPlainRoutes } from "./plains/myplain.routes";
+import { paymentRentRoutes } from "./plains/paymentRent.routes";
 import { paymentsRoutes } from "./plains/payments.routes";
 import { plainsRoutes } from "./plains/plains.routes";
 import { PropertyRoutes } from "./property/property.routes";
 import { SchedulingRouter } from "./scheduling/scheduling.routes";
 import { SessionClientRouter } from "./sessions/sessions.routes";
-import { financerRoutes } from "./financer/financer.routes";
-import { paymentRentRoutes } from "./plains/paymentRent.routes";
-import { mailRoutes } from "./mail/mail";
-import { AcessRouter } from "./Acess/acess.routes";
-import { BrokerRouter } from "./Broker/broker.routes";
-import { AlertRouter } from "./Alert/alert.routes";
+
 
 const router = Router();
 
