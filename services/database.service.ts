@@ -9,6 +9,8 @@ export const collections: {
   plains?:mongoDB.Collection,
   payments?:mongoDB.Collection,
   favorite?:mongoDB.Collection,
+  contact?:mongoDB.Collection,
+  scheduling?:mongoDB.Collection,
  } = {}
 
 export async function connectToDatabase() {
@@ -51,6 +53,18 @@ export async function connectToDatabase() {
       const favoriteCollection: mongoDB.Collection = db.collection(process.env.FAVORITE_COLLECTION_NAME);
       collections.favorite = favoriteCollection;
       // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${favoriteCollection.collectionName}`);
+
+      
+      // Favorite
+      const contactCollection: mongoDB.Collection = db.collection(process.env.CONTACT_COLLECTION_NAME);
+      collections.contact = contactCollection;
+      // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${favoriteCollection.collectionName}`);
+      
+      // scheduling
+      const schedulingCollection: mongoDB.Collection = db.collection(process.env.SCHEDULING_COLLECTION_NAME);
+      collections.scheduling = schedulingCollection;
+      // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${favoriteCollection.collectionName}`);
+
 
       }
   
