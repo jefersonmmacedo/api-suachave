@@ -22,6 +22,8 @@ export const collections: {
   broker?:mongoDB.Collection,
   recuperation?:mongoDB.Collection,
   viewProperty?:mongoDB.Collection,
+  messages?:mongoDB.Collection,
+  chats?:mongoDB.Collection,
  } = {}
 
 export async function connectToDatabase() {
@@ -121,5 +123,15 @@ export async function connectToDatabase() {
       collections.recuperation = recuperationCollection;
       // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${notificationCollection.collectionName}`);
       
+          // Messagess
+          const messagesCollection: mongoDB.Collection = db.collection(process.env.MESSAGEs_COLLECTION_NAME);
+          collections.messages = messagesCollection;
+          // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${messagesCollection.collectionName}`);
+    
+          // Messagess
+          const chatCollection: mongoDB.Collection = db.collection(process.env.CHATS_COLLECTION_NAME);
+          collections.chats = chatCollection;
+          // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${chatCollection.collectionName}`);
+          
       }
   

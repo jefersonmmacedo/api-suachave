@@ -11,6 +11,8 @@ import { contactRoutes } from "./contact/contact.routes";
 import { favoriteRoutes } from "./favorite/favorite.routes";
 import { financerRoutes } from "./financer/financer.routes";
 import { mailRoutes } from "./mail/mail";
+import { chatsRoutes } from "./message/chats.routes";
+import { MessagesRoutes } from "./message/messages.routes";
 import { negotiationsRoutes } from "./negotiations/negotiations.routes";
 import { notificationsRoutes } from "./notification/notification.routes";
 import { MyPlainRoutes } from "./plains/myplain.routes";
@@ -51,6 +53,8 @@ connectToDatabase()
     router.use("/alert", AlertRouter);
     router.use("/recuperation", groupsRecuperation);
     router.use("/viewproperty", ViewPropertyRoutes);
+    router.use("/messages", MessagesRoutes);
+    router.use("/chats", chatsRoutes);
   }).catch((error: Error) => {
     console.error("Database connection failed", error);
     process.exit();
