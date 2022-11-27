@@ -24,6 +24,7 @@ export const collections: {
   viewProperty?:mongoDB.Collection,
   messagesRooms?:mongoDB.Collection,
   rooms?:mongoDB.Collection,
+  evaluation?:mongoDB.Collection,
  } = {}
 
 export async function connectToDatabase() {
@@ -131,6 +132,11 @@ export async function connectToDatabase() {
           // Messagess
           const roomsCollection: mongoDB.Collection = db.collection(process.env.ROOMS_COLLECTION_NAME);
           collections.rooms = roomsCollection;
+          // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${chatCollection.collectionName}`);
+          
+          // Messagess
+          const EvaluationCollection: mongoDB.Collection = db.collection(process.env.EVALUATION_COLLECTION_NAME);
+          collections.evaluation = EvaluationCollection;
           // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${chatCollection.collectionName}`);
 
       }

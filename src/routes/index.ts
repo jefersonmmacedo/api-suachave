@@ -24,6 +24,7 @@ import { groupsRecuperation } from "./recuperation/recuperation.routes";
 import { SchedulingRouter } from "./scheduling/scheduling.routes";
 import { SessionClientRouter } from "./sessions/sessions.routes";
 import { ViewPropertyRoutes } from "./viewProperty/viewProperty.routes";
+import { EvaluationRoutes } from "./evaluation/evaluation.routes";
 
 
 const router = Router();
@@ -55,6 +56,7 @@ connectToDatabase()
     router.use("/viewproperty", ViewPropertyRoutes);
     router.use("/messages", MessagesRoomsRoutes);
     router.use("/rooms", RoomsRoutes);
+    router.use("/evaluation", EvaluationRoutes);
   }).catch((error: Error) => {
     console.error("Database connection failed", error);
     process.exit();
