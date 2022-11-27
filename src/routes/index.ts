@@ -25,6 +25,8 @@ import { SchedulingRouter } from "./scheduling/scheduling.routes";
 import { SessionClientRouter } from "./sessions/sessions.routes";
 import { ViewPropertyRoutes } from "./viewProperty/viewProperty.routes";
 import { EvaluationRoutes } from "./evaluation/evaluation.routes";
+import { ticketRentRoutes } from "./ticketRent/ticketRent.routes";
+import { replyTicketRentRoutes } from "./ticketRent/replyTicketRent.routes";
 
 
 const router = Router();
@@ -57,6 +59,8 @@ connectToDatabase()
     router.use("/messages", MessagesRoomsRoutes);
     router.use("/rooms", RoomsRoutes);
     router.use("/evaluation", EvaluationRoutes);
+    router.use("/ticketRent", ticketRentRoutes);
+    router.use("/replyTicketRent", replyTicketRentRoutes);
   }).catch((error: Error) => {
     console.error("Database connection failed", error);
     process.exit();

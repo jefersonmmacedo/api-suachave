@@ -10,3 +10,20 @@ git push -u origin main
 git remote add origin https://github.com/foursome4/foursome.git
 git branch -M main
 git push -u origin main
+
+
+TICKETSUPPORT_COLLECTION_NAME="ticketSupport"
+REPLYTICKETSUPPORT_COLLECTION_NAME="replyTicketSupport"
+
+  ticketSupport?:mongoDB.Collection,
+  replyTicketSupport?:mongoDB.Collection,
+
+        // Messagess
+          const ticketSupportCollection: mongoDB.Collection = db.collection(process.env.TICKETSUPPORT_COLLECTION_NAME);
+          collections.ticketSupport = ticketSupportCollection;
+          // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${chatCollection.collectionName}`);
+          
+          // Messagess
+          const replyTicketSupportCollection: mongoDB.Collection = db.collection(process.env.REPLYTICKETSUPPORT_COLLECTION_NAME);
+          collections.replyTicketSupport = replyTicketSupportCollection;
+          // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${chatCollection.collectionName}`);
