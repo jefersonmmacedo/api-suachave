@@ -27,6 +27,8 @@ import { ViewPropertyRoutes } from "./viewProperty/viewProperty.routes";
 import { EvaluationRoutes } from "./evaluation/evaluation.routes";
 import { ticketRentRoutes } from "./ticketRent/ticketRent.routes";
 import { replyTicketRentRoutes } from "./ticketRent/replyTicketRent.routes";
+import { ticketSupportRoutes } from "./ticketSupport/ticketSupport.routes";
+import { replyTicketSupportRoutes } from "./ticketSupport/replyTicketSupport.routes";
 
 
 const router = Router();
@@ -61,6 +63,8 @@ connectToDatabase()
     router.use("/evaluation", EvaluationRoutes);
     router.use("/ticketRent", ticketRentRoutes);
     router.use("/replyTicketRent", replyTicketRentRoutes);
+    router.use("/ticketSupport", ticketSupportRoutes);
+    router.use("/replyTicketSupport", replyTicketSupportRoutes);
   }).catch((error: Error) => {
     console.error("Database connection failed", error);
     process.exit();
