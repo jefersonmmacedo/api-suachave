@@ -1,4 +1,4 @@
-import { IMessagesRepository } from "../../repositories/IMessagesRepository";
+import { IMessagesRoomsRepository } from "../../repositories/IMessagesRoomsRepository";
 
 interface IRequest {
   id: string;
@@ -11,8 +11,8 @@ interface IRequest {
   link: string;
 }
 
-class CreateMessagesUseCase {
-  constructor(private MessagesRepository: IMessagesRepository) {
+class CreateMessagesRoomsUseCase {
+  constructor(private MessagesRoomsRepository: IMessagesRoomsRepository) {
     ("");
   }
 
@@ -20,10 +20,10 @@ class CreateMessagesUseCase {
     id,idRomm, idCompany, IdClient, idProperty, avatar, text, link
   }: IRequest): Promise<void>{
 
-   await this.MessagesRepository.create({
+   await this.MessagesRoomsRepository.create({
    id, idRomm, idCompany, IdClient, idProperty, avatar, text, link
     });
   }
 }
 
-export { CreateMessagesUseCase };
+export { CreateMessagesRoomsUseCase };

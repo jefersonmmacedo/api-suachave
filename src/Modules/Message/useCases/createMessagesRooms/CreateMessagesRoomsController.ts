@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 
-import { CreateMessagesUseCase } from "./CreateMessagesUseCase";
+import { CreateMessagesRoomsUseCase } from "./CreateMessagesRoomsUseCase";
 
-class CreateMessagesController {
-  constructor(private createMessagesUseCase: CreateMessagesUseCase) {
+class CreateMessagesRoomsController {
+  constructor(private createMessagesRoomsUseCase: CreateMessagesRoomsUseCase) {
     ("");
   }
   handle(req: Request, res: Response) {
@@ -11,7 +11,7 @@ class CreateMessagesController {
       id, idRomm, idCompany, IdClient, idProperty, avatar, text, link
      } =
       req.body;
-    this.createMessagesUseCase.execute({
+    this.createMessagesRoomsUseCase.execute({
       id, idRomm, idCompany, IdClient, idProperty, avatar, text, link
     }).then((result) => {
       return res.status(201).json(result).send();
@@ -23,4 +23,4 @@ class CreateMessagesController {
   }
 }
 
-export { CreateMessagesController };
+export { CreateMessagesRoomsController };

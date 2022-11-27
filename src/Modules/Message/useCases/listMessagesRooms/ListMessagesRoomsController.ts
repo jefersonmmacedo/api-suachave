@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { collections } from "../../../../../services/database.service";
 
-import { ListMessagesUseCase } from "./ListMessagesUseCase";
+import { ListMessagesRoomsUseCase } from "./ListMessagesRoomsUseCase";
 
-class ListMessagesController {
-  constructor(private listPostseCase: ListMessagesUseCase) {
+class ListMessagesRoomsController {
+  constructor(private listPostseCase: ListMessagesRoomsUseCase) {
     ("");
   }
 
@@ -15,7 +15,7 @@ class ListMessagesController {
 
 console.log(page)
 console.log(limit)
-await collections.messages.find({}).toArray(function(err, result){
+await collections.messagesRooms.find({}).toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {
@@ -29,4 +29,4 @@ await collections.messages.find({}).toArray(function(err, result){
   }
 }
 
-export { ListMessagesController };
+export { ListMessagesRoomsController };

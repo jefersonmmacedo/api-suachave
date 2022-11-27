@@ -1,5 +1,5 @@
 
-class Messages {
+class MessagesRooms {
   id: string;
   idRomm: string;
   idCompany: string;
@@ -11,4 +11,4 @@ class Messages {
   created_at: Date;
 }
 
-export { Messages };
+export { MessagesRooms };
