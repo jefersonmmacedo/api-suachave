@@ -1,5 +1,5 @@
 
-class Chats {
+class Rooms {
   id: string;
   Room: string;
   idCompany: string;
@@ -10,4 +10,4 @@ class Chats {
   created_at: Date;
 }
 
-export { Chats };
+export { Rooms };

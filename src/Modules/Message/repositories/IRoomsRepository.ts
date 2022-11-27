@@ -1,7 +1,7 @@
-import { Chats } from "../models/Chats";
+import { Rooms } from "../models/Rooms";
 
-interface IChatsDTO {
-  id
+interface IRoomsDTO {
+  id: string;
   Room: string;
   idCompany: string;
   IdClient:string;
@@ -11,11 +11,11 @@ interface IChatsDTO {
 }
 
 
-interface IChatsRepository {
-  create({Room, idCompany, IdClient, idProperty, avatarClient, imageProperty }: IChatsDTO): Promise<void>;
+interface IRoomsRepository {
+  create({Room, idCompany, IdClient, idProperty, avatarClient, imageProperty }: IRoomsDTO): Promise<void>;
   list();
   delete({id});
   update({id, Room, idCompany, IdClient, idProperty, avatarClient, imageProperty}): Promise<void>
 }
 
-export { IChatsRepository, IChatsDTO };
+export { IRoomsRepository, IRoomsDTO };

@@ -1,4 +1,4 @@
-import { IChatsRepository } from "../../repositories/IChatsRepository";
+import { IRoomsRepository } from "../../repositories/IRoomsRepository";
 
 interface IRequest {
   id: string;
@@ -10,8 +10,8 @@ interface IRequest {
   imageProperty: string;
 }
 
-class CreateChatsUseCase {
-  constructor(private ChatsRepository: IChatsRepository) {
+class CreateRoomsUseCase {
+  constructor(private RoomsRepository: IRoomsRepository) {
     ("");
   }
 
@@ -19,10 +19,10 @@ class CreateChatsUseCase {
     id,Room, idCompany, IdClient, idProperty, avatarClient, imageProperty
   }: IRequest): Promise<void>{
 
-   await this.ChatsRepository.create({
+   await this.RoomsRepository.create({
    id, Room, idCompany, IdClient, idProperty, avatarClient, imageProperty
     });
   }
 }
 
-export { CreateChatsUseCase };
+export { CreateRoomsUseCase };

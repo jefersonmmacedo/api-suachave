@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 
-import { CreateChatsUseCase } from "./CreateChatsUseCase";
+import { CreateRoomsUseCase } from "./CreateRoomsUseCase";
 
-class CreateChatsController {
-  constructor(private createChatsUseCase: CreateChatsUseCase) {
+class CreateRoomsController {
+  constructor(private createRoomsUseCase: CreateRoomsUseCase) {
     ("");
   }
   handle(req: Request, res: Response) {
@@ -11,7 +11,7 @@ class CreateChatsController {
       id, Room, idCompany, IdClient, idProperty, avatarClient, imageProperty
      } =
       req.body;
-    this.createChatsUseCase.execute({
+    this.createRoomsUseCase.execute({
       id, Room, idCompany, IdClient, idProperty, avatarClient, imageProperty
     }).then((result) => {
       return res.status(201).json(result).send();
@@ -23,4 +23,4 @@ class CreateChatsController {
   }
 }
 
-export { CreateChatsController };
+export { CreateRoomsController };
