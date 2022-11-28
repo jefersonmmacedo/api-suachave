@@ -1,11 +1,8 @@
 class ViewProperty {
   id: string;
+  idProperty: string;
   idCompany: string;
-  idTransaction: string;
-  title: string;
-  description: string;
-  type: string;
-  value: string;
+  idClient: string;
   created_at: Date;
 }
 

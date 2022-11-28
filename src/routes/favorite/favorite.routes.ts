@@ -23,13 +23,13 @@ favoriteRoutes.get("/", (req, res) => {
 favoriteRoutes.get("/filter/:idProperty/:idClient", (req, res) => {
   return listFavoriteUserController.handle(req, res);
 });
-favoriteRoutes.get("/filter/:idCompany", (req, res) => {
+favoriteRoutes.get("/company/:idCompany", (req, res) => {
   return listFavoriteCompanyController.handle(req, res);
 });
-favoriteRoutes.get("/filter/:idClient", (req, res) => {
+favoriteRoutes.get("/client/:idClient", (req, res) => {
   return listFavoriteClientController.handle(req, res);
 });
-favoriteRoutes.get("/filter/:idProperty", (req, res) => {
+favoriteRoutes.get("/filter/property/:idProperty", (req, res) => {
   return listFavoritePropertyController.handle(req, res);
 });
 

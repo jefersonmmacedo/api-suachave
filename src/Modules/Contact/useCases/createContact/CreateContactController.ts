@@ -8,10 +8,10 @@ class CreateContactController {
   }
 
   handle(req: Request, res: Response): Response {
-    const { id, idProperty, idClient, idCompany, type } = req.body;
+    const { id, idProperty, idCompany, idClient, name, email, phone, whatsapp, type, } = req.body;
 
     this.createContactUseCase.execute({
-      id, idProperty, idClient, idCompany, type
+      id, idProperty, idCompany, idClient, name, email, phone, whatsapp, type,
     });
 
 

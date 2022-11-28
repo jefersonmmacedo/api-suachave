@@ -3,17 +3,19 @@ import { Contact } from "../models/Contact";
 interface ICreateContactDTO {
   id: string;
   idProperty: string;
-  idClient: string;
   idCompany: string;
+  idClient: string;
+  name: string;
+  email: string;
+  phone: string;
+  whatsapp: string;
   type: string;
 }
 
+ 
 interface IContactRepository {
   create({
-   idProperty, idClient, idCompany, type
-  }: ICreateContactDTO): void;
-  update({
-   id, idProperty, idClient, idCompany, type
+   idProperty, idCompany, idClient, name, email, phone, whatsapp, type,
   }: ICreateContactDTO): void;
   list();
   delete({id});

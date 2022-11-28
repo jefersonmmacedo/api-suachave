@@ -3,10 +3,11 @@ class Contact {
   idProperty: string;
   idCompany: string;
   idClient: string;
-  nameClient: string;
-  avatarClient: string;
+  name: string;
+  email: string;
+  phone: string;
   whatsapp: string;
-  type: string; // Whatsapp / Ligação
+  type: string;
   created_at: Date;
 }
 

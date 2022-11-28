@@ -1,16 +1,16 @@
 import { Request, Response } from "express";
 import { collections } from "../../../../../services/database.service";
 
-import { ListSchedulingUnicUseCase } from "./ListSchedulingUnicUseCase";
+import { ListSchedulingClientUseCase } from "./ListSchedulingClientUseCase";
 
-class ListSchedulingUnicController {
-  constructor(private ListSchedulingUnicUseCase: ListSchedulingUnicUseCase) {
+class ListSchedulingClientController {
+  constructor(private ListSchedulingClientUseCase: ListSchedulingClientUseCase) {
     ("");
   }
 
   async handle(req: Request, res: Response) {
-    const id = req.params;
-   await collections.scheduling.find(id).toArray(function(err, result){
+    const idClient = req.params;
+   await collections.scheduling.find(idClient).toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {
@@ -22,4 +22,4 @@ class ListSchedulingUnicController {
   }
 }
 
-export { ListSchedulingUnicController };
+export { ListSchedulingClientController };

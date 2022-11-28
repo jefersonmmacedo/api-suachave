@@ -8,13 +8,13 @@ class UpdateSchedulingController {
   }
 
   async handle(req: Request, res: Response) {
-    const {idClient, idProperty, idCompany, email, phone, whatsapp, status,
-      day, month, year, shift, hour, ownACar, address, addressProperty, similarProperties, amountOfPeople, dateCompleted } = req.body;
+    const {idClient, idProperty, idCompany, titleProperty, imageProperty, email, phone, whatsapp, status, meet, 
+      day, month, year, shift, hour, ownACar, location, address, similarProperties, amountOfPeople, dateCompleted } = req.body;
     const id = req.params; 
 
 
-    await collections.scheduling.findOneAndUpdate(id, {$set:{idClient, idProperty, idCompany, email, phone, whatsapp, status,
-      day, month, year, shift, hour, ownACar, address, addressProperty, similarProperties, amountOfPeople, dateCompleted}}, {upsert: true}).then((result) => {
+    await collections.scheduling.findOneAndUpdate(id, {$set:{idClient, idProperty, idCompany, titleProperty, imageProperty, email, phone, whatsapp, status,  meet,        
+      day, month, year, shift, hour, ownACar, location, address, similarProperties, amountOfPeople, dateCompleted}}, {upsert: true}).then((result) => {
       return res.status(201).json(result);
     }).catch(error => {
       return res.status(500);

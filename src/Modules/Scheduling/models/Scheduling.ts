@@ -3,6 +3,8 @@ class Scheduling {
   idClient: string;
   idProperty: string;
   idCompany: string;
+  titleProperty: string;
+  imageProperty: string;
   email: string;
   phone: string;
   whatsapp: string;
@@ -13,8 +15,8 @@ class Scheduling {
   shift: string;
   hour: string;
   ownACar: string;
+  location: string;
   address: string;
-  addressProperty: string;
   similarProperties: string;
   amountOfPeople: string;
   dateCompleted: Date;

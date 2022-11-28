@@ -7,34 +7,39 @@ interface IRequest {
   idClient: string;
   idProperty: string;
   idCompany: string;
+  titleProperty: string;
+  imageProperty: string;
   email: string;
   phone: string;
   whatsapp: string;
   status: string;
+  meet: string;
   day: string;
   month: string;
   year: string;
   shift: string;
   hour: string;
   ownACar: string;
+  location: string;
   address: string;
-  addressProperty: string;
   amountOfPeople: string;
   similarProperties: string;
   dateCompleted: Date;
 }
+
+ 
 
 class UpdateSchedulingUseCase {
   constructor(private SchedulingRepository: ISchedulingRepository) {
     " ";
   }
   
-  async execute({id, idClient, idProperty, idCompany, email, phone, whatsapp, status,
-    day, month, year, shift, hour, ownACar, address, addressProperty, similarProperties, amountOfPeople, dateCompleted }: IRequest): Promise<void> {
+  async execute({id, idClient, idProperty, idCompany,titleProperty, imageProperty, email, phone, whatsapp, status, meet,
+    day, month, year, shift, hour, ownACar, location, address, similarProperties, amountOfPeople, dateCompleted }: IRequest): Promise<void> {
 
       await this.SchedulingRepository.update({
-        id, idClient, idProperty, idCompany, email, phone, whatsapp, status,
-        day, month, year, shift, hour, ownACar, address, addressProperty, similarProperties, amountOfPeople, dateCompleted
+        id, idClient, idProperty, idCompany,titleProperty, imageProperty, email, phone, whatsapp, status, meet,
+        day, month, year, shift, hour, ownACar, location, address, similarProperties, amountOfPeople, dateCompleted
       });
 
   }

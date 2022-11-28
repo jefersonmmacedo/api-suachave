@@ -20,14 +20,14 @@ class SchedulingRepository implements ISchedulingRepository {
     return SchedulingRepository.INSTANCE;
   }
 
-  async create({idClient, idProperty, idCompany, email, phone, whatsapp, status,
-    day, month, year, shift, hour, ownACar, address, addressProperty, similarProperties, amountOfPeople, dateCompleted}: ISchedulingDTO) {
+  async create({idClient, idProperty, idCompany, titleProperty, imageProperty, email, phone, whatsapp, status, meet,
+    day, month, year, shift, hour, ownACar,location, address, similarProperties, amountOfPeople, dateCompleted}: ISchedulingDTO) {
     const scheduling: Scheduling = new Scheduling();
       const idMini = uuidv4()
       const id = idMini.substring(0,8)
       Object.assign(scheduling, {
-        id, _id: id, idClient, idProperty, idCompany, email, phone, whatsapp, status,
-        day, month, year, shift, hour, ownACar, address, addressProperty, similarProperties, amountOfPeople, dateCompleted,created_at: new Date(),
+        id, _id: id, idClient, idProperty, idCompany, titleProperty, imageProperty, email, phone, whatsapp, status, meet,
+        day, month, year, shift, hour, ownACar, location, address, similarProperties, amountOfPeople, dateCompleted,created_at: new Date(),
       });
       this.scheduling.push(scheduling);
       
@@ -42,8 +42,8 @@ class SchedulingRepository implements ISchedulingRepository {
 
   list(){ }
 
-  update({id, idClient, idProperty, idCompany, email, phone, whatsapp, status,
-    day, month, year, shift, hour, ownACar, address, addressProperty, similarProperties, dateCompleted}):void {}
+  update({id, idClient, idProperty, idCompany, titleProperty, imageProperty, email, phone, whatsapp, status, meet,
+    day, month, year, shift, hour, ownACar, location, address, similarProperties, dateCompleted}):void {}
 
   async delete({id}) {
     await collections.scheduling.deleteOne(id).then((result) => {

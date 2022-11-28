@@ -21,15 +21,12 @@ class ContactRepository implements IContactRepository {
   }
 
  async create({
-   idProperty, idClient, idCompany, type
+  idProperty, idCompany, idClient, name, email, phone, whatsapp, type,
   }: ICreateContactDTO) {
     const contact: Contact = new Contact();
     const _id = uuidv4()
     Object.assign(contact, {
-      _id, id: _id,
-     idProperty,
-     idClient,
-      idCompany, type,
+      _id, id: _id,idProperty, idCompany, idClient, name, email, phone, whatsapp, type,
       created_at: new Date()
     });
 
@@ -44,7 +41,6 @@ class ContactRepository implements IContactRepository {
 
   list(){  }
 
-  async update({ }){}
 
   async delete({id}) {
     await collections.contact.deleteOne(id).then((result) => {

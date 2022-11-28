@@ -3,8 +3,12 @@ import { IContactRepository } from "../../repositories/IContactRepository";
 interface IRequest {
   id: string;
   idProperty: string;
-  idClient: string;
   idCompany: string;
+  idClient: string;
+  name: string;
+  email: string;
+  phone: string;
+  whatsapp: string;
   type: string;
 }
 
@@ -13,9 +17,9 @@ class CreateContactUseCase {
     " ";
   }
 
-  execute({ id, idProperty, idClient, idCompany, type }: IRequest): void {
+  execute({ id, idProperty, idCompany, idClient, name, email, phone, whatsapp, type, }: IRequest): void {
     this.ContactRepository.create({
-      id, idProperty, idClient, idCompany, type
+      id, idProperty, idCompany, idClient, name, email, phone, whatsapp, type,
     });
   }
 }

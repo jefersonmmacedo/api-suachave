@@ -3,8 +3,8 @@ import { ViewProperty } from "../models/ViewProperty";
 interface ICreateViewPropertyDTO {
   id: string;
   idProperty: string;
-  idClient: string;
   idCompany: string;
+  idClient: string;
 }
 
 interface IViewPropertyRepository {
