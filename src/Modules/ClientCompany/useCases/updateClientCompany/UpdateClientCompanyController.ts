@@ -8,11 +8,15 @@ class UpdateClientCompanyController {
   }
 
   async handle(req: Request, res: Response) {
-    const {idProcess, name, rg, cpf, email, phone, whatsapp, avatar, road, number, district, city, uf, interest, attendance} = req.body;
+    const {idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
+      number, district, city, uf, interest, tipo, subtipo, attendance, } = req.body;
     const id = req.params; 
 
 
-    await collections.clientCompany.findOneAndUpdate(id, {$set:{idProcess, name, rg, cpf, email, phone, whatsapp, avatar, road, number, district, city, uf, interest, attendance}}, {upsert: true}).then((result) => {
+    await collections.clientCompany.findOneAndUpdate(id, {$set:{
+      idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
+number, district, city, uf, interest, tipo, subtipo, attendance, 
+    }}, {upsert: true}).then((result) => {
       return res.status(201).json(result);
     }).catch(error => {
       return res.status(500);

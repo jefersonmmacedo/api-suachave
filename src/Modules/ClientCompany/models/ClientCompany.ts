@@ -2,6 +2,7 @@ class ClientCompany {
   id: string;
   idProcess: string;
   name: string;
+  fantasyName: string;
   rg: string;
   cpf: string;
   email: string;
@@ -14,6 +15,8 @@ class ClientCompany {
   city: string;
   uf: string;
   interest: string;
+  tipo: string;
+  subtipo: string;
   attendance: string;
   created_at: Date;
 }

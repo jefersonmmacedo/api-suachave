@@ -35,12 +35,14 @@ class ClientCompanyRepository implements IClientCompanyRepository {
     } 
   }
 
-  async create({idProcess, name, rg, cpf, email, phone, whatsapp, avatar, road, number, district, city, uf, interest, attendance}: IClientCompanyDTO) {
+  async create({idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
+    number, district, city, uf, interest, tipo, subtipo, attendance, }: IClientCompanyDTO) {
     const account: ClientCompany = new ClientCompany();
       const idMini = uuidv4()
       const id = idMini.substring(0,8)
       Object.assign(account, {
-        id, _id: id, idProcess, name, rg, cpf, email, phone, whatsapp, avatar, road, number, district, city, uf, interest, attendance,created_at: new Date(),
+        id, _id: id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
+        number, district, city, uf, interest, tipo, subtipo, attendance, created_at: new Date(),
       });
       this.clientCompany.push(account);
       
@@ -66,7 +68,8 @@ class ClientCompanyRepository implements IClientCompanyRepository {
 
   list(){ }
 
-  update({id, idProcess, name, rg, cpf, email, phone, whatsapp, avatar, road, number, district, city, uf, interest, attendance}):void {}
+  update({id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
+    number, district, city, uf, interest, tipo, subtipo, attendance, }):void {}
 
   async delete({id}) {
     await collections.account.deleteOne(id).then((result) => {

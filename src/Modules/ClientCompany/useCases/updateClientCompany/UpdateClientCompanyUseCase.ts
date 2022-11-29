@@ -6,6 +6,7 @@ interface IRequest {
   id: string;
   idProcess: string;
   name: string;
+  fantasyName: string;
   rg: string;
   cpf: string;
   email: string;
@@ -18,6 +19,8 @@ interface IRequest {
   city: string;
   uf: string;
   interest: string;
+  tipo: string;
+  subtipo: string;
   attendance: string;
 }
 
@@ -26,12 +29,14 @@ class UpdateClientCompanyUseCase {
     " ";
   }
   
-  async execute({id, idProcess, name, rg, cpf, email, phone, whatsapp, avatar, road, number, district, city, uf, interest, attendance}: IRequest): Promise<void> {
+  async execute({id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
+    number, district, city, uf, interest, tipo, subtipo, attendance, }: IRequest): Promise<void> {
     const findEmail = await this.ClientCompanyRepository.findByEmail(email);
    
 
       await this.ClientCompanyRepository.update({
-        id, idProcess, name, rg, cpf, email, phone, whatsapp, avatar, road, number, district, city, uf, interest, attendance
+        id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
+number, district, city, uf, interest, tipo, subtipo, attendance, 
       });
 
   }

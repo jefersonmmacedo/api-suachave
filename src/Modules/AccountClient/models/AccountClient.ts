@@ -1,5 +1,6 @@
 class AccountClient {
   id: string;
+  type: string;
   name: string;
   email: string;
   phone: string;

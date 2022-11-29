@@ -6,6 +6,7 @@ import { IAccountClientRepository } from "../../repositories/IAccountClientRepos
 interface IResponse {
           token: string;
           id: string;
+          type: string;
           name: string;
           email: string;
           phone: string;
@@ -54,6 +55,7 @@ class AuthenticateAccountClientUseCase {
         }
         const userData = {
           id: user.id,
+          type: user.type,
           name: user.name,
           email: user.email,
           phone: user.phone,
@@ -70,6 +72,7 @@ class AuthenticateAccountClientUseCase {
 
       const token = sign({
         id: user.id,
+        type: user.type,
         name: user.name,
         email: user.email,
         phone: user.phone,
@@ -92,6 +95,7 @@ class AuthenticateAccountClientUseCase {
 
       return {
           id: user.id,
+          type: user.type,
           name: user.name,
           email: user.email,
           phone: user.phone,

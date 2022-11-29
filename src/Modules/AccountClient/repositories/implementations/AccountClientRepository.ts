@@ -35,12 +35,12 @@ class AccountClientRepository implements IAccountClientRepository {
     } 
   }
 
-  async create({name, email, phone, whatsapp, password, status, verified, avatar, cep, city, uf}: IAccountClientDTO) {
+  async create({type, name, email, phone, whatsapp, password, status, verified, avatar, cep, city, uf}: IAccountClientDTO) {
     const account: AccountClient = new AccountClient();
       const idMini = uuidv4()
       const id = idMini.substring(0,8)
       Object.assign(account, {
-        id, _id: id, name, email, phone, whatsapp, password, status, verified, avatar, cep, city, uf,created_at: new Date(),
+        id, _id: id, type, name, email, phone, whatsapp, password, status, verified, avatar, cep, city, uf,created_at: new Date(),
       });
       this.accountClient.push(account);
       
@@ -66,7 +66,7 @@ class AccountClientRepository implements IAccountClientRepository {
 
   list(){ }
 
-  update({id, name, email, phone, whatsapp, password, status, verified, avatar, cep, city, uf}):void {}
+  update({id, type, name, email, phone, whatsapp, password, status, verified, avatar, cep, city, uf}):void {}
 
   async delete({id}) {
     await collections.account.deleteOne(id).then((result) => {

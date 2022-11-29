@@ -4,6 +4,7 @@ import { Request, Response } from "express";
 
 interface IRequest {
   id: string;
+  type: string;
   name: string;
   email: string;
   phone: string;
@@ -22,11 +23,11 @@ class UpdateStatusUseCase {
     " ";
   }
   
-  async execute({id, name, email, phone, whatsapp, password, status, verified, avatar, cep, city, uf }: IRequest): Promise<void> {
+  async execute({id, type,  name, email, phone, whatsapp, password, status, verified, avatar, cep, city, uf }: IRequest): Promise<void> {
     const passwordHash = await hash(await password, 8);
 
       await this.accountRepository.update({
-        id, name, email, phone, whatsapp, password:passwordHash, status, verified, avatar, cep, city, uf
+        id,type, name, email, phone, whatsapp, password:passwordHash, status, verified, avatar, cep, city, uf
       });
 
   }

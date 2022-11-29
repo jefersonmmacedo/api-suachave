@@ -7,10 +7,10 @@ class CreateAccountClientController {
   }
 
   handle(req: Request, res: Response) {
-    const { id,name, email, phone, whatsapp, password, status, verified, avatar, cep, city, uf } = req.body;
+    const { id, type, name, email, phone, whatsapp, password, status, verified, avatar, cep, city, uf } = req.body;
 
     this.createAccountClientUseCase.execute({
-      id,name, email, phone, whatsapp, password, status, verified, avatar, cep, city, uf
+      id, type, name, email, phone, whatsapp, password, status, verified, avatar, cep, city, uf
     }).then((result) => {
       return res.status(201).json(result).send();
     }).catch(error => {

@@ -3,13 +3,11 @@ class Negotiations {
   idCompany: string;
   idClient: string;
   idProperty: string;
-  typNegotiation: string;
-  documentations: object;
-  contract: string;
-  staus: string;
+  typeNegotiation: string;
+  status: string;
   deadline: string;
   parcel: string;
-  notifications: object;
+  valueProperty: string;
   created_at: Date;
 }
 
