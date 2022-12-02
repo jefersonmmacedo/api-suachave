@@ -15,7 +15,7 @@ class ListPropertyFullDataController {
     const bedroom = req.query.bedroom;
     const restroom = req.query.restroom;
     const garage = req.query.garage;
-    const suite = req.query.garage;
+    const suite = req.query.suite;
 
     console.log({bedroom: bedroom})
     console.log({restroom: restroom})
