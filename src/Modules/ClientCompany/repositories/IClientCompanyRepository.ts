@@ -17,8 +17,10 @@ interface IClientCompanyDTO {
   city: string;
   uf: string;
   interest: string;
-  tipo: string;
-  subtipo: string;
+  type: string;
+  subtype: string;
+  cityPreference: string;
+  ufPreference: string;
   attendance: string;
 }
 
@@ -28,13 +30,13 @@ interface IClientCompanyDTO {
  
 interface IClientCompanyRepository {
   create({ id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
-    number, district, city, uf, interest, tipo, subtipo, attendance, }: IClientCompanyDTO): Promise<void>;
+    number, district, city, uf, interest, type, subtype, cityPreference, ufPreference, attendance, }: IClientCompanyDTO): Promise<void>;
   findByEmail(email: string): Promise<void> ;
   findById(id: string): Promise<void>;
   session(email: string, id: string, password: string);
   list();
   update({ id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
-    number, district, city, uf, interest, tipo, subtipo, attendance, }: IClientCompanyDTO): void;
+    number, district, city, uf, interest, type, subtype, cityPreference, ufPreference, attendance, }: IClientCompanyDTO): void;
   delete({id});
 }
 

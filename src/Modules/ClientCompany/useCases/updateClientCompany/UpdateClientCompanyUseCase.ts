@@ -19,10 +19,13 @@ interface IRequest {
   city: string;
   uf: string;
   interest: string;
-  tipo: string;
-  subtipo: string;
+  type: string;
+  subtype: string;
+  cityPreference: string;
+  ufPreference: string;
   attendance: string;
 }
+
 
 class UpdateClientCompanyUseCase {
   constructor(private ClientCompanyRepository: IClientCompanyRepository) {
@@ -30,13 +33,13 @@ class UpdateClientCompanyUseCase {
   }
   
   async execute({id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
-    number, district, city, uf, interest, tipo, subtipo, attendance, }: IRequest): Promise<void> {
+    number, district, city, uf, interest, type, subtype, cityPreference, ufPreference,  attendance, }: IRequest): Promise<void> {
     const findEmail = await this.ClientCompanyRepository.findByEmail(email);
    
 
       await this.ClientCompanyRepository.update({
         id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
-number, district, city, uf, interest, tipo, subtipo, attendance, 
+number, district, city, uf, interest, type, subtype, cityPreference, ufPreference,  attendance, 
       });
 
   }

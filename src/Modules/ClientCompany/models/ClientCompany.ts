@@ -15,8 +15,10 @@ class ClientCompany {
   city: string;
   uf: string;
   interest: string;
-  tipo: string;
-  subtipo: string;
+  type: string;
+  subtype: string;
+  cityPreference: string;
+  ufPreference: string;
   attendance: string;
   created_at: Date;
 }

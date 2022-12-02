@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { collections } from "../../../../../services/database.service";
 
-import { ListPropertyUseCase } from "./ListPropertyUseCase";
+import { ListPropertyFullDataUseCase } from "./ListPropertyFullDataUseCase";
 
-class ListPropertyController {
-  constructor(private listPropertyUseCase: ListPropertyUseCase) {
+class ListPropertyFullDataController {
+  constructor(private listPropertyFullDataUseCase: ListPropertyFullDataUseCase) {
     ("");
   }
 
@@ -44,7 +44,7 @@ class ListPropertyController {
   }
 }
 
-export { ListPropertyController };
+export { ListPropertyFullDataController };
 
 
 
