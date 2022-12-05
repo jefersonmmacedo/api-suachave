@@ -29,6 +29,9 @@ import { ticketRentRoutes } from "./ticketRent/ticketRent.routes";
 import { replyTicketRentRoutes } from "./ticketRent/replyTicketRent.routes";
 import { ticketSupportRoutes } from "./ticketSupport/ticketSupport.routes";
 import { replyTicketSupportRoutes } from "./ticketSupport/replyTicketSupport.routes";
+import { contractsRoutes } from "./negotiations/contracts.routes";
+import { documentationsRoutes } from "./negotiations/documentations.routes";
+import { processNotesRoutes } from "./negotiations/ProcessNotes.routes";
 
 
 const router = Router();
@@ -61,10 +64,14 @@ connectToDatabase()
     router.use("/messages", MessagesRoomsRoutes);
     router.use("/rooms", RoomsRoutes);
     router.use("/evaluation", EvaluationRoutes);
-    router.use("/ticketRent", ticketRentRoutes);
-    router.use("/replyTicketRent", replyTicketRentRoutes);
-    router.use("/ticketSupport", ticketSupportRoutes);
-    router.use("/replyTicketSupport", replyTicketSupportRoutes);
+    router.use("/ticketrent", ticketRentRoutes);
+    router.use("/replyticketrent", replyTicketRentRoutes);
+    router.use("/ticketsupport", ticketSupportRoutes);
+    router.use("/replyticketsupport", replyTicketSupportRoutes);
+    router.use("/negotiations", negotiationsRoutes);
+    router.use("/documentations", documentationsRoutes);
+    router.use("/contracts", contractsRoutes);
+    router.use("/processnotes", processNotesRoutes);
   }).catch((error: Error) => {
     console.error("Database connection failed", error);
     process.exit();

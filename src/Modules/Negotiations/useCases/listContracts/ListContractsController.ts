@@ -1,16 +1,16 @@
 import { Request, Response } from "express";
 import { collections } from "../../../../../services/database.service";
 
-import { ListNegotiationsUseCase } from "./ListNegotiationsUseCase";
+import { ListContractsUseCase } from "./ListContractsUseCase";
 
-class ListNegotiationsController {
-  constructor(private listNegotiationsUseCase: ListNegotiationsUseCase) {
+class ListContractsController {
+  constructor(private listContractsUseCase: ListContractsUseCase) {
     ("");
   }
 
   async handle(req: Request, res: Response) {
-    const id = req.params;
-   await collections.negotiations.find(id).toArray(function(err, result){
+    const idNegotiations = req.params;
+   await collections.contracts.find(idNegotiations).toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {
@@ -23,4 +23,4 @@ class ListNegotiationsController {
   }
 }
 
-export { ListNegotiationsController };
+export { ListContractsController };
