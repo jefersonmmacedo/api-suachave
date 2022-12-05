@@ -7,10 +7,10 @@ class CreateNegotiationsController {
   }
 
   handle(req: Request, res: Response) {
-    const { id,idCompany, idClient, idProperty, typNegotiation, documentations, contract, staus, deadline, parcel, notifications, } = req.body;
+    const { id,idCompany, idClient, idProperty, typeNegotiation, status, deadline, parcel, valueProperty, amountofCharges, valueTotal} = req.body;
 
     this.createNegotiationsUseCase.execute({
-      id,idCompany, idClient, idProperty, typNegotiation, documentations, contract, staus, deadline, parcel, notifications,
+      id, idCompany, idClient, idProperty, typeNegotiation, status, deadline, parcel, valueProperty, amountofCharges, valueTotal
     }).then((result) => {
       return res.status(201).json(result).send();
     }).catch(error => {

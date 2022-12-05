@@ -5,21 +5,22 @@ interface INegotiationsDTO {
   idCompany: string;
   idClient: string;
   idProperty: string;
-  typNegotiation: string;
-  documentations: object;
-  contract: string;
-  staus: string;
+  typeNegotiation: string;
+  status: string;
   deadline: string;
   parcel: string;
-  notifications: object;
+  valueProperty: string;
+  amountofCharges: string;
+  valueTotal: string;
 }
 
  
+ 
 
 interface INegotiationsRepository {
-  create({ idCompany, idClient, idProperty, typNegotiation, documentations, contract, staus, deadline, parcel, notifications,}: INegotiationsDTO): Promise<void>;
+  create({ idCompany, idClient, idProperty, typeNegotiation, status, deadline, parcel, valueProperty, amountofCharges, valueTotal,}: INegotiationsDTO): Promise<void>;
   list();
-  update({id, idCompany, idClient, idProperty, typNegotiation, documentations, contract, staus, deadline, parcel, notifications,}: INegotiationsDTO): void;
+  update({id, idCompany, idClient, idProperty, typeNegotiation, status, deadline, parcel, valueProperty, amountofCharges, valueTotal,}: INegotiationsDTO): void;
   delete({id});
 }
 

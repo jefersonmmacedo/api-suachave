@@ -1,4 +1,4 @@
-class Negotiations {
+class Documentations {
   id: string;
   idCompany: string;
   idClient: string;
@@ -7,5 +7,5 @@ class Negotiations {
   created_at: Date;
 }
 
-export { Negotiations } 
+export { Documentations } 
 

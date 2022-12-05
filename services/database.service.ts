@@ -29,6 +29,9 @@ export const collections: {
   replyTicketRent?:mongoDB.Collection,
   ticketSupport?:mongoDB.Collection,
   replyTicketSupport?:mongoDB.Collection,
+  processNotes?:mongoDB.Collection,
+  documentations?:mongoDB.Collection,
+  contracts?:mongoDB.Collection,
  } = {}
 
 export async function connectToDatabase() {
@@ -128,39 +131,55 @@ export async function connectToDatabase() {
       collections.recuperation = recuperationCollection;
       // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${notificationCollection.collectionName}`);
       
-          // Messagess
+
           const messagesRoomsCollection: mongoDB.Collection = db.collection(process.env.MESSAGESROOMS_COLLECTION_NAME);
           collections.messagesRooms = messagesRoomsCollection;
           // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${messagesCollection.collectionName}`);
     
-          // Messagess
+
           const roomsCollection: mongoDB.Collection = db.collection(process.env.ROOMS_COLLECTION_NAME);
           collections.rooms = roomsCollection;
-          // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${chatCollection.collectionName}`);
+
           
-          // Messagess
+
           const EvaluationCollection: mongoDB.Collection = db.collection(process.env.EVALUATION_COLLECTION_NAME);
           collections.evaluation = EvaluationCollection;
-          // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${chatCollection.collectionName}`);
+
           
-          // Messagess
+
           const ticketRentCollection: mongoDB.Collection = db.collection(process.env.TICKETRENT_COLLECTION_NAME);
           collections.ticketRent = ticketRentCollection;
-          // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${chatCollection.collectionName}`);
+
           
-          // Messagess
+
           const replyTicketRentCollection: mongoDB.Collection = db.collection(process.env.REPLYTICKETRENT_COLLECTION_NAME);
           collections.replyTicketRent = replyTicketRentCollection;
-          // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${chatCollection.collectionName}`);
-          // Messagess
+
+
           const ticketSupportCollection: mongoDB.Collection = db.collection(process.env.TICKETSUPPORT_COLLECTION_NAME);
           collections.ticketSupport = ticketSupportCollection;
-          // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${chatCollection.collectionName}`);
+
           
-          // Messagess
+
           const replyTicketSupportCollection: mongoDB.Collection = db.collection(process.env.REPLYTICKETSUPPORT_COLLECTION_NAME);
           collections.replyTicketSupport = replyTicketSupportCollection;
-          // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${chatCollection.collectionName}`);
+
+          
+
+          const documentationsCollection: mongoDB.Collection = db.collection(process.env.DOCUMENTATIONS_COLLECTION_NAME);
+          collections.documentations = documentationsCollection;
+
+          
+
+          const contractsCollection: mongoDB.Collection = db.collection(process.env.CONTRACTS_COLLECTION_NAME);
+          collections.contracts = contractsCollection;
+
+          
+
+          const processNotesCollection: mongoDB.Collection = db.collection(process.env.PROCESSNOTES_COLLECTION_NAME);
+          collections.processNotes = processNotesCollection;
+
 
       }
-  
+
+

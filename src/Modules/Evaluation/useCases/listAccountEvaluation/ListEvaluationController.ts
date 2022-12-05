@@ -9,27 +9,9 @@ class ListEvaluationController {
   }
 
   async handle(req: Request, res: Response) {
-    const {availability, status} = req.params;
-    const uf = req.query.uf;
-    const city = req.query.city;
-    const bedroom = req.query.bedroom;
-    const suite = req.query.suite;
-    const resdroom = req.query.resdroom;
-    const garage = req.query.garage;
+    const idCompany = req.params;
 
-   await collections.evaluation.find({
-    "$and": [{ availability: availability },
-    { status: status},
-  ],
-  "$or": [
-    { uf: uf},
-      { city: city},
-      { bedroom: bedroom },
-      { suite: suite },
-      { resdroom: resdroom },
-      { garage: garage },
-  ]
-}).sort( { created_at: -1 } ).toArray(function(err, result){
+   await collections.evaluation.find(idCompany).sort( { created_at: -1 } ).toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {

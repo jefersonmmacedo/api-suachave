@@ -1,12 +1,14 @@
-class Negotiations {
+class ProcessNotes {
   id: string;
   idCompany: string;
   idClient: string;
   idNegotiations: string;
   noteProcess: string;
-  status: object;
+  status: string;
   created_at: Date;
 }
 
-export { Negotiations } 
+export { ProcessNotes } 
+
+
 

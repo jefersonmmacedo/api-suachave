@@ -7,13 +7,13 @@ interface IRequest {
   idCompany: string;
   idClient: string;
   idProperty: string;
-  typNegotiation: string;
-  documentations: object;
-  contract: string;
-  staus: string;
+  typeNegotiation: string;
+  status: string;
   deadline: string;
   parcel: string;
-  notifications: object;
+  valueProperty: string;
+  amountofCharges: string;
+  valueTotal: string;
 }
 
 class CreateNegotiationsUseCase {
@@ -21,10 +21,10 @@ class CreateNegotiationsUseCase {
     " ";
   }
   
-  async execute({id,idCompany, idClient, idProperty, typNegotiation, documentations, contract, staus, deadline, parcel, notifications,}: IRequest): Promise<void> {
+  async execute({id, idCompany, idClient, idProperty, typeNegotiation, status, deadline, parcel, valueProperty, amountofCharges, valueTotal}: IRequest): Promise<void> {
 
       await this.NegotiationsRepository.create({
-        id, idCompany, idClient, idProperty, typNegotiation, documentations, contract, staus, deadline, parcel, notifications, 
+        id, idCompany, idClient, idProperty, typeNegotiation, status, deadline, parcel, valueProperty, amountofCharges, valueTotal 
       });
 
   }

@@ -9,8 +9,8 @@ const EvaluationRoutes = Router();
 EvaluationRoutes.post("/", (req, res) => {
   return createEvaluationController.handle(req, res);
 });
-EvaluationRoutes.get("/all/:availability", (req, res) => {
-  return listEvaluationAllController.handle(req, res);
+EvaluationRoutes.get("/company/:idCompany", (req, res) => {
+  return listEvaluationController.handle(req, res);
 });
 EvaluationRoutes.get("/:id", (req, res) => {
   return listEvaluationUnicController.handle(req, res);

@@ -1,11 +1,11 @@
-class Negotiations {
+class Contracts {
   id: string;
   idCompany: string;
   idClient: string;
   idNegotiations: string;
-  contract: object;
+  contract: string;
   created_at: Date;
 }
 
-export { Negotiations } 
+export { Contracts } 
 

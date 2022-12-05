@@ -8,6 +8,8 @@ class Negotiations {
   deadline: string;
   parcel: string;
   valueProperty: string;
+  amountofCharges: string;
+  valueTotal: string;
   created_at: Date;
 }
 

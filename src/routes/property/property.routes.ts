@@ -3,6 +3,7 @@ import { createPropertyController } from "../../Modules/Property/useCases/create
 import { listPropertyController } from "../../Modules/Property/useCases/listAccountProperty";
 import { listPropertyAdressController } from "../../Modules/Property/useCases/listAccountPropertyAdress";
 import { listPropertyAllController } from "../../Modules/Property/useCases/listAccountPropertyAll";
+import { listPropertyAllTypeController } from "../../Modules/Property/useCases/listAccountPropertyAllType";
 import { listPropertyFullDataController } from "../../Modules/Property/useCases/listAccountPropertyFullData";
 import { listPropertyCompanyController } from "../../Modules/Property/useCases/listPropertyCompany";
 import { listPropertyUnicController } from "../../Modules/Property/useCases/listPropertyUnic";
@@ -29,6 +30,9 @@ PropertyRoutes.get("/listsadress/:availability/:status", (req, res) => {
 });
 PropertyRoutes.get("/listsadressfull/:availability/:status", (req, res) => {
   return listPropertyFullDataController.handle(req, res);
+});
+PropertyRoutes.get("/listtype/:availability", (req, res) => {
+  return listPropertyAllTypeController.handle(req, res);
 });
 
 export { PropertyRoutes };
