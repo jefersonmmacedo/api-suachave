@@ -31,7 +31,7 @@ import { ticketSupportRoutes } from "./ticketSupport/ticketSupport.routes";
 import { replyTicketSupportRoutes } from "./ticketSupport/replyTicketSupport.routes";
 import { contractsRoutes } from "./negotiations/contracts.routes";
 import { documentationsRoutes } from "./negotiations/documentations.routes";
-import { processNotesRoutes } from "./negotiations/ProcessNotes.routes";
+import { processNotesRoutes } from "./negotiations/processNotes.routes";
 
 
 
