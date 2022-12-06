@@ -12,7 +12,7 @@ AcessRouter.post("/", (req, res) => {
 AcessRouter.get("/", (req, res) => {
   return listAccessController.handle(req, res);
 });
-AcessRouter.get("/", (req, res) => {
+AcessRouter.get("/company/:idCompany", (req, res) => {
   return listAccessUserController.handle(req, res);
 });
 

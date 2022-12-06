@@ -7,11 +7,11 @@ class CreateClientCompanyController {
   }
 
   handle(req: Request, res: Response) {
-    const { id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
+    const { id, idProcess, typeClient, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
       number, district, city, uf, interest, type, subtype, cityPreference, ufPreference,  attendance, } = req.body;
 
     this.createClientCompanyUseCase.execute({
-      id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
+      id, idProcess, typeClient, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
       number, district, city, uf, interest, type, subtype, cityPreference, ufPreference,  attendance,
     }).then((result) => {
       return res.status(201).json(result).send();

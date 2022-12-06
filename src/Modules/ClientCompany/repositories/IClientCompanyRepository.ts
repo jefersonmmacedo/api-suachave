@@ -3,6 +3,7 @@ import { ClientCompany } from "../models/ClientCompany";
 interface IClientCompanyDTO {
   id: string;
   idProcess: string;
+  typeClient: string;
   name: string;
   fantasyName: string;
   rg: string;
@@ -29,13 +30,13 @@ interface IClientCompanyDTO {
 
  
 interface IClientCompanyRepository {
-  create({ id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
+  create({ id, idProcess, typeClient, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
     number, district, city, uf, interest, type, subtype, cityPreference, ufPreference, attendance, }: IClientCompanyDTO): Promise<void>;
   findByEmail(email: string): Promise<void> ;
   findById(id: string): Promise<void>;
   session(email: string, id: string, password: string);
   list();
-  update({ id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
+  update({ id, idProcess, typeClient, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
     number, district, city, uf, interest, type, subtype, cityPreference, ufPreference, attendance, }: IClientCompanyDTO): void;
   delete({id});
 }

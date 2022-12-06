@@ -5,6 +5,7 @@ import { Request, Response } from "express";
 interface IRequest {
   id: string;
   idProcess: string;
+  typeClient: string;
   name: string;
   fantasyName: string;
   rg: string;
@@ -31,12 +32,12 @@ class CreateClientCompanyUseCase {
     " ";
   }
   
-  async execute({id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
+  async execute({id, idProcess, typeClient, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
     number, district, city, uf, interest, type, subtype, cityPreference, ufPreference,  attendance, }: IRequest): Promise<void> {
     const findEmail = await this.ClientCompanyRepository.findByEmail(email);
   
       await this.ClientCompanyRepository.create({
-        id, idProcess, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
+        id, idProcess, typeClient, name, fantasyName, rg, cpf, email, phone, whatsapp, avatar, road,
 number, district, city, uf, interest, type, subtype, cityPreference, ufPreference,  attendance, 
       });
 

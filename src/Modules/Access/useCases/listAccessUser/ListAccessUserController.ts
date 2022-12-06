@@ -9,8 +9,8 @@ class ListAccessUserController {
   }
 
   async handle(req: Request, res: Response) {
-    const idClient = req.params
-   await collections.access.find(idClient).toArray(function(err, result){
+    const idCompany = req.params
+   await collections.access.find(idCompany).toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {

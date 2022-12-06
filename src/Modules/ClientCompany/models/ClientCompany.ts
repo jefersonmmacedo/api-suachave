@@ -1,6 +1,7 @@
 class ClientCompany {
   id: string;
   idProcess: string;
+  typeClient: string;
   name: string;
   fantasyName: string;
   rg: string;
