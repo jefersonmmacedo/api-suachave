@@ -9,7 +9,9 @@ class ListFinancerController {
   }
 
   async handle(req: Request, res: Response) {
-   await collections.financer.find().toArray(function(err, result){
+    const id = req.params
+
+   await collections.financer.find(id).toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {

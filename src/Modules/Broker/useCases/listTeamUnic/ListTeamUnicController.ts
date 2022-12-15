@@ -1,16 +1,16 @@
 import { Request, Response } from "express";
 import { collections } from "../../../../../services/database.service";
 
-import { ListBrokerUnicUseCase } from "./ListBrokerUnicUseCase";
+import { ListTeamUnicUseCase } from "./ListTeamUnicUseCase";
 
-class ListBrokerUnicController {
-  constructor(private ListBrokerUnicUseCase: ListBrokerUnicUseCase) {
+class ListTeamUnicController {
+  constructor(private ListTeamUnicUseCase: ListTeamUnicUseCase) {
     ("");
   }
 
   async handle(req: Request, res: Response) {
     const id = req.params;
-   await collections.broker.find(id).toArray(function(err, result){
+   await collections.team.find(id).toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {
@@ -22,4 +22,4 @@ class ListBrokerUnicController {
   }
 }
 
-export { ListBrokerUnicController };
+export { ListTeamUnicController };

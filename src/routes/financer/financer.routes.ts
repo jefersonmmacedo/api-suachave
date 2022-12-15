@@ -8,7 +8,7 @@ const financerRoutes = Router();
 financerRoutes.post("/", (req, res) => {
   return createFinancerController.handle(req, res);
 });
-financerRoutes.get("/", (req, res) => {
+financerRoutes.get("/unic/:id", (req, res) => {
   return listFinancerController.handle(req, res);
 });
 financerRoutes.get("/company/:idCompany", (req, res) => {

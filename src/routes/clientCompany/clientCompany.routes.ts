@@ -17,10 +17,10 @@ clientCompanyRoutes.get("/", (req, res) => {
 clientCompanyRoutes.get("/company/:idCompany", (req, res) => {
   return listClientCompanyAdmController.handle(req, res);
 });
-clientCompanyRoutes.get("/company/:idCompany", (req, res) => {
+clientCompanyRoutes.get("/email/:email", (req, res) => {
   return listClientCompanyEmailController.handle(req, res);
 });
-clientCompanyRoutes.patch("/company/:idCompany", (req, res) => {
+clientCompanyRoutes.patch("/:id", (req, res) => {
   return updateClientCompanyController.handle(req, res);
 });
 

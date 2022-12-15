@@ -9,6 +9,8 @@ interface IRequest {
   idCompany: string;
   titleProperty: string;
   imageProperty: string;
+  nameClient: string;
+  avatarClient: string;
   email: string;
   phone: string;
   whatsapp: string;
@@ -34,11 +36,11 @@ class UpdateSchedulingUseCase {
     " ";
   }
   
-  async execute({id, idClient, idProperty, idCompany,titleProperty, imageProperty, email, phone, whatsapp, status, meet,
+  async execute({id, idClient, idProperty, idCompany,titleProperty, imageProperty, nameClient, avatarClient, email, phone, whatsapp, status, meet,
     day, month, year, shift, hour, ownACar, location, address, similarProperties, amountOfPeople, dateCompleted }: IRequest): Promise<void> {
 
       await this.SchedulingRepository.update({
-        id, idClient, idProperty, idCompany,titleProperty, imageProperty, email, phone, whatsapp, status, meet,
+        id, idClient, idProperty, idCompany,titleProperty, imageProperty, nameClient, avatarClient, email, phone, whatsapp, status, meet,
         day, month, year, shift, hour, ownACar, location, address, similarProperties, amountOfPeople, dateCompleted
       });
 

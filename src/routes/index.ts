@@ -5,7 +5,7 @@ import { CompanyRouter } from "./accounts/company.routes";
 import { AcessRouter } from "./Acess/acess.routes";
 import { AlertRouter } from "./Alert/alert.routes";
 import { bankRoutes } from "./bank/bank.routes";
-import { BrokerRouter } from "./Broker/broker.routes";
+import { TeamRouter } from "./team/team.routes";
 import { clientCompanyRoutes } from "./clientCompany/clientCompany.routes";
 import { contactRoutes } from "./contact/contact.routes";
 import { favoriteRoutes } from "./favorite/favorite.routes";
@@ -58,7 +58,7 @@ connectToDatabase()
     router.use("/clientCompany", clientCompanyRoutes);
     router.use("/financer", financerRoutes);
     router.use("/acess", AcessRouter);
-    router.use("/broker", BrokerRouter);
+    router.use("/team", TeamRouter);
     router.use("/alert", AlertRouter);
     router.use("/recuperation", groupsRecuperation);
     router.use("/viewproperty", ViewPropertyRoutes);

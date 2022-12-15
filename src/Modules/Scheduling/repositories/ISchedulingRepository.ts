@@ -7,6 +7,8 @@ interface ISchedulingDTO {
   idCompany: string;
   titleProperty: string;
   imageProperty: string;
+  nameClient: string;
+  avatarClient: string;
   email: string;
   phone: string;
   whatsapp: string;
@@ -28,11 +30,11 @@ interface ISchedulingDTO {
  
 interface ISchedulingRepository {
   create({
-    idClient, idProperty, idCompany, titleProperty, imageProperty, email, phone, whatsapp, status, meet,
+    idClient, idProperty, idCompany, titleProperty, imageProperty, nameClient, avatarClient, email, phone, whatsapp, status, meet,
     day, month, year, shift, hour, ownACar,location, address,     similarProperties, amountOfPeople, dateCompleted
   }: ISchedulingDTO): Promise<void>;
   list();
-  update({id, idClient, idProperty, idCompany, titleProperty, imageProperty, email, phone, whatsapp, status, meet,
+  update({id, idClient, idProperty, idCompany, titleProperty, imageProperty, nameClient, avatarClient, email, phone, whatsapp, status, meet,
     day, month, year, shift, hour, ownACar, location, address, similarProperties, amountOfPeople, dateCompleted}: ISchedulingDTO): void;
   delete({id});
 }

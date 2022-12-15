@@ -20,13 +20,13 @@ class SchedulingRepository implements ISchedulingRepository {
     return SchedulingRepository.INSTANCE;
   }
 
-  async create({idClient, idProperty, idCompany, titleProperty, imageProperty, email, phone, whatsapp, status, meet,
+  async create({idClient, idProperty, idCompany, titleProperty, imageProperty, nameClient, avatarClient, email, phone, whatsapp, status, meet,
     day, month, year, shift, hour, ownACar,location, address, similarProperties, amountOfPeople, dateCompleted}: ISchedulingDTO) {
     const scheduling: Scheduling = new Scheduling();
       const idMini = uuidv4()
       const id = idMini.substring(0,8)
       Object.assign(scheduling, {
-        id, _id: id, idClient, idProperty, idCompany, titleProperty, imageProperty, email, phone, whatsapp, status, meet,
+        id, _id: id, idClient, idProperty, idCompany, titleProperty, imageProperty, nameClient, avatarClient, email, phone, whatsapp, status, meet,
         day, month, year, shift, hour, ownACar, location, address, similarProperties, amountOfPeople, dateCompleted,created_at: new Date(),
       });
       this.scheduling.push(scheduling);

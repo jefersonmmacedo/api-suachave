@@ -5,6 +5,8 @@ class Scheduling {
   idCompany: string;
   titleProperty: string;
   imageProperty: string;
+  nameClient: string;
+  avatarClient: string;
   email: string;
   phone: string;
   whatsapp: string;

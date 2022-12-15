@@ -1,17 +1,17 @@
 import { Request, Response } from "express";
 import { collections } from "../../../../../services/database.service";
 
-import { ListBrokerUseCase } from "./ListBrokerUseCase";
+import { ListTeamUseCase } from "./ListTeamUseCase";
 
-class ListBrokerController {
-  constructor(private listBrokerUseCase: ListBrokerUseCase) {
+class ListTeamController {
+  constructor(private listTeamUseCase: ListTeamUseCase) {
     ("");
   }
 
   async handle(req: Request, res: Response) {
     const status = "active";
     const verified = true;
-   await collections.broker.find({status: status, verified: verified}).toArray(function(err, result){
+   await collections.team.find({status: status, verified: verified}).toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {
@@ -24,4 +24,4 @@ class ListBrokerController {
   }
 }
 
-export { ListBrokerController };
+export { ListTeamController };
