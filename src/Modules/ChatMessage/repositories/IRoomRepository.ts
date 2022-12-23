@@ -9,14 +9,13 @@ interface ICreateRoomDTO {
   imageProperty: string;
 }
 
-
-
+ 
 interface IRoomRepository {
   create({
-   id, room, idCompany, idClient, idProperty, imageProperty 
+   id, room, idCompany, idClient, idProperty, imageProperty, 
   }: ICreateRoomDTO): void;
   update({
-   id, room, idCompany, idClient, idProperty, imageProperty 
+   id, room, idCompany, idClient, idProperty, imageProperty, 
   }: ICreateRoomDTO): void;
   list();
   delete({id});

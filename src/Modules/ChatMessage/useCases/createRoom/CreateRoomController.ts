@@ -8,10 +8,10 @@ class CreateRoomController {
   }
 
   handle(req: Request, res: Response): Response {
-    const { id, room, idCompany, idClient, idProperty } = req.body;
+    const { id, room, idCompany, idClient, idProperty, imageProperty  } = req.body;
 
     this.createRoomUseCase.execute({
-      id, room, idCompany, idClient, idProperty
+      id, room, idCompany, idClient, idProperty, imageProperty 
     });
 
 
