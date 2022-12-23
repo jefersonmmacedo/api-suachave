@@ -2,6 +2,7 @@ import { Router } from "express";
 import { createAccountClientController } from "../../Modules/AccountClient/useCases/createAccount";
 import { listAccountClientController } from "../../Modules/AccountClient/useCases/listAccountClient";
 import { listAccountClientEmailController } from "../../Modules/AccountClient/useCases/listAccountClientEmail";
+import { listAccountClientUnicController } from "../../Modules/AccountClient/useCases/listAccountClientUnic";
 
 
 const AccountClientRouter = Router();
@@ -15,6 +16,9 @@ AccountClientRouter.get("/", (req, res) => {
 })
 AccountClientRouter.get("/unic/:email", (req, res) => {
   return listAccountClientEmailController.handle(req, res);
+})
+AccountClientRouter.get("/unicid/:id", (req, res) => {
+  return listAccountClientUnicController.handle(req, res);
 })
 
 

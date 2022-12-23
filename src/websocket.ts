@@ -38,9 +38,6 @@ io.on("connection", (socket) => {
     console.log(`User Connection ${socket.id}`)
     console.log("Connection successfully established!");
 
-
-
- 
     socket.on("select_room", (data, callback)=> {
       console.log(data)
       socket.join(data.room);
@@ -85,6 +82,7 @@ io.on("connection", (socket) => {
     console.log(rooms.length)
   
     socket.on("message", (data) => {
+      console.log("NOva mensagem WebSocket");
       console.log(data);
       const message: Messages = {
         room: data.room,

@@ -1,16 +1,15 @@
 import { Request, Response } from "express";
 import { collections } from "../../../../../services/database.service";
 
-import { ListMessageUseCase } from "./ListMessageUseCase";
+import { ListMessageReadDataUseCase } from "./ListMessageReadDataUseCase";
 
-class ListMessageController {
-  constructor(private listMessageUseCase: ListMessageUseCase) {
+class ListMessageReadDataController {
+  constructor(private listMessageReadDataUseCase: ListMessageReadDataUseCase) {
     ("");
   }
 
   async handle(req: Request, res: Response) {
-    const idRoom = req.params
-   await collections.messagesRooms.find(idRoom).sort( { created_at: -1 } ).toArray(function(err, result){
+   await collections.messageReadData.find().toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {
@@ -22,4 +21,4 @@ class ListMessageController {
   }
 }
 
-export { ListMessageController };
+export { ListMessageReadDataController };

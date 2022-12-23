@@ -6,6 +6,7 @@ interface IRequest {
   idCompany: string;
   idClient: string;
   idProperty: string;
+  imageProperty: string;
 }
 
 class CreateRoomUseCase {
@@ -13,9 +14,9 @@ class CreateRoomUseCase {
     " ";
   }
 
-  execute({ id, room, idCompany, idClient, idProperty }: IRequest): void {
+  execute({ id, room, idCompany, idClient, idProperty, imageProperty }: IRequest): void {
     this.RoomRepository.create({
-      id, room, idCompany, idClient, idProperty
+      id, room, idCompany, idClient, idProperty, imageProperty
     });
   }
 }

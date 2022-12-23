@@ -11,8 +11,6 @@ import { contactRoutes } from "./contact/contact.routes";
 import { favoriteRoutes } from "./favorite/favorite.routes";
 import { financerRoutes } from "./financer/financer.routes";
 import { mailRoutes } from "./mail/mail";
-import { RoomsRoutes } from "./message/rooms.routes";
-import { MessagesRoomsRoutes } from "./message/messagesRooms.routes";
 import { negotiationsRoutes } from "./negotiations/negotiations.routes";
 import { notificationsRoutes } from "./notification/notification.routes";
 import { MyPlainRoutes } from "./plains/myplain.routes";
@@ -32,6 +30,8 @@ import { replyTicketSupportRoutes } from "./ticketSupport/replyTicketSupport.rou
 import { contractsRoutes } from "./negotiations/contracts.routes";
 import { documentationsRoutes } from "./negotiations/documentations.routes";
 import { processNotesRoutes } from "./negotiations/processNotes.routes";
+import { RoomRouter } from "./chatMessage/room.routes";
+import { MessageRouter } from "./chatMessage/message.routes";
 
 
 
@@ -62,8 +62,8 @@ connectToDatabase()
     router.use("/alert", AlertRouter);
     router.use("/recuperation", groupsRecuperation);
     router.use("/viewproperty", ViewPropertyRoutes);
-    router.use("/messages", MessagesRoomsRoutes);
-    router.use("/rooms", RoomsRoutes);
+    router.use("/messages", MessageRouter);
+    router.use("/rooms", RoomRouter);
     router.use("/evaluation", EvaluationRoutes);
     router.use("/ticketrent", ticketRentRoutes);
     router.use("/replyticketrent", replyTicketRentRoutes);

@@ -6,16 +6,17 @@ interface ICreateRoomDTO {
   idCompany: string;
   idClient: string;
   idProperty: string;
+  imageProperty: string;
 }
 
 
 
 interface IRoomRepository {
   create({
-   room, idCompany, idClient, idProperty, 
+   id, room, idCompany, idClient, idProperty, imageProperty 
   }: ICreateRoomDTO): void;
   update({
-   id, room, idCompany, idClient, idProperty, 
+   id, room, idCompany, idClient, idProperty, imageProperty 
   }: ICreateRoomDTO): void;
   list();
   delete({id});

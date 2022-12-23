@@ -32,6 +32,10 @@ export const collections: {
   processNotes?:mongoDB.Collection,
   documentations?:mongoDB.Collection,
   contracts?:mongoDB.Collection,
+  messageReadData?:mongoDB.Collection,
+  roomReadData?:mongoDB.Collection,
+  notificationReadData?:mongoDB.Collection,
+  
  } = {}
 
 export async function connectToDatabase() {
@@ -179,6 +183,14 @@ export async function connectToDatabase() {
           const processNotesCollection: mongoDB.Collection = db.collection(process.env.PROCESSNOTES_COLLECTION_NAME);
           collections.processNotes = processNotesCollection;
 
+          const messageReadDataCollection: mongoDB.Collection = db.collection(process.env.MESSAGEREADDATA_COLLECTION_NAME);
+          collections.messageReadData = messageReadDataCollection;
+
+          const roomReadDataCollection: mongoDB.Collection = db.collection(process.env.ROOMREADDATA_COLLECTION_NAME);
+          collections.roomReadData = roomReadDataCollection;
+
+          const notificationReadDataCollection: mongoDB.Collection = db.collection(process.env.NOTIFICATIONREADDATA_COLLECTION_NAME);
+          collections.notificationReadData = notificationReadDataCollection;
 
       }
 

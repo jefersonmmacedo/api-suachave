@@ -4,6 +4,7 @@ class Room {
   idCompany: string;
   idClient: string;
   idProperty: string;
+  imageProperty: string;
   created_at: Date;
 }
 

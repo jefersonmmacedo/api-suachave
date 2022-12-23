@@ -21,13 +21,12 @@ class RoomRepository implements IRoomRepository {
   }
 
  async create({
-  idCompany, idClient, idProperty, 
+  id, idCompany, idClient, idProperty, imageProperty, 
   }: ICreateRoomDTO) {
     const room: Room = new Room();
-    const _id = uuidv4()
     Object.assign(room, {
-      _id, id: _id, room: _id,
-      idCompany, idClient, idProperty,
+      _id: id, id: id, room: id,
+      idCompany, idClient, idProperty, imageProperty,
       created_at: new Date()
     });
 
