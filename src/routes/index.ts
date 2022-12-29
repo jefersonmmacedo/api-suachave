@@ -32,6 +32,7 @@ import { documentationsRoutes } from "./negotiations/documentations.routes";
 import { processNotesRoutes } from "./negotiations/processNotes.routes";
 import { RoomRouter } from "./chatMessage/room.routes";
 import { MessageRouter } from "./chatMessage/message.routes";
+import { DateReadyRouter } from "./DateReady/dateReady.routes";
 
 
 
@@ -73,6 +74,7 @@ connectToDatabase()
     router.use("/documentations", documentationsRoutes);
     router.use("/contracts", contractsRoutes);
     router.use("/processnotes", processNotesRoutes);
+    router.use("/dateready", DateReadyRouter);
   }).catch((error: Error) => {
     console.error("Database connection failed", error);
     process.exit();

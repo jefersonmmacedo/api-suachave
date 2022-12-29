@@ -9,8 +9,8 @@ class ListRoomReadDataController {
   }
 
   async handle(req: Request, res: Response) {
-    const idUser = req.params;
-   await collections.roomReadData.find(idUser).toArray(function(err, result){
+    const idRoom = req.params;
+   await collections.roomReadData.find(idRoom).toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {

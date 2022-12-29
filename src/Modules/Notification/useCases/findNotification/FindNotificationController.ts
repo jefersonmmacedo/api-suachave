@@ -9,8 +9,8 @@ class FindNotificationController {
   }
 
   async handle(req: Request, res: Response) {
-    const {email, code} = req.params;
-   await collections.notification.find({email, code}).toArray(function(err, result){
+    const idAccount = req.params;
+   await collections.notification.find(idAccount).toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {
