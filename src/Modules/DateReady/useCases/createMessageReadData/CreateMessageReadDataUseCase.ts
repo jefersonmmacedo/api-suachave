@@ -2,7 +2,7 @@ import { IMessageReadDataRepository } from "../../repositories/IMessageReadDataR
 
 interface IRequest {
   id: string;
-  idRoom: string;
+  idUser: string;
   dateReady: string;
 }
 
@@ -11,9 +11,9 @@ class CreateMessageReadDataUseCase {
     " ";
   }
 
-  execute({ id, idRoom, dateReady }: IRequest): void {
+  execute({ id, idUser, dateReady }: IRequest): void {
     this.MessageReadDataRepository.create({
-      id, idRoom, dateReady
+      id, idUser, dateReady
     });
   }
 }

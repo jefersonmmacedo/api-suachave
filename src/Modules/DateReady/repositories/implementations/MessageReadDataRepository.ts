@@ -21,18 +21,18 @@ class MessageReadDataRepository implements IMessageReadDataRepository {
   }
 
  async create({
-  idRoom, dateReady
+  idUser, dateReady,
   }: ICreateMessageReadDataDTO) {
     const messageReadData: MessageReadData = new MessageReadData();
     const _id = uuidv4()
-    Object.assign(MessageReadData, {
+    Object.assign(messageReadData, {
       _id, id: _id,
-      idRoom, dateReady,
+      idUser, dateReady,
       created_at: new Date()
     });
 
     this.messageReadData.push(messageReadData);
-    console.log(messageReadData)
+    console.log(MessageReadData)
     await collections.messageReadData.insertOne(messageReadData).then((result) => {
       console.log(result)
     }).catch(error => {

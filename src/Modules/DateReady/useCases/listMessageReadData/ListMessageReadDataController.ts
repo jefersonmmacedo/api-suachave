@@ -9,7 +9,8 @@ class ListMessageReadDataController {
   }
 
   async handle(req: Request, res: Response) {
-   await collections.messageReadData.find().toArray(function(err, result){
+    const idUser = req.params;
+   await collections.messageReadData.find(idUser).toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {

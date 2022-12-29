@@ -8,10 +8,10 @@ class CreateMessageReadDataController {
   }
 
   handle(req: Request, res: Response): Response {
-    const { id, idRoom, dateReady } = req.body;
+    const { id, idUser, dateReady } = req.body;
 
     this.createMessageReadDataUseCase.execute({
-      id, idRoom, dateReady
+      id, idUser, dateReady
     });
 
 

@@ -1,4 +1,4 @@
-import { MessageReadDataRepository } from "../../repositories/implementations/MessageReadData";
+import { MessageReadDataRepository } from "../../repositories/implementations/MessageReadDataRepository";
 import { ListMessageReadDataController } from "./ListMessageReadDataController";
 import { ListMessageReadDataUseCase } from "./ListMessageReadDataUseCase";
 

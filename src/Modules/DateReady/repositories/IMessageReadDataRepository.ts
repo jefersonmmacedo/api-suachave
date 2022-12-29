@@ -2,18 +2,16 @@ import { MessageReadData } from "../models/MessageReadData";
 
 interface ICreateMessageReadDataDTO {
   id: string;
-  idRoom: string;
+  idUser: string;
   dateReady: string;
 }
 
-
-
 interface IMessageReadDataRepository {
   create({
-    idRoom, dateReady,
+    idUser, dateReady,
   }: ICreateMessageReadDataDTO): void;
   update({
-   id, idRoom, dateReady,
+   id, idUser, dateReady,
   }: ICreateMessageReadDataDTO): void;
   list();
   delete({id});
