@@ -8,15 +8,15 @@ class CreatePropertyController {
 
   handle(req: Request, res: Response) {
     const { 
-      id, idCompany, title, road, district, city, uf, description, type, subType, status,
-      availability, bedroom, garage, suite, restroom, priceSale, priceRent, textRent, condominium,
+      id, idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status,
+      availability, bedroom, garage, suite, restroom, furnished, pets, priceSale, priceRent, textRent, condominium,
       iptu, otherPrices, buildingArea, siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction,
       images, featuredImage, platformVideo, video, slider, financing, characteristcs
      } = req.body;
 
     this.createPropertyUseCase.execute({
-      id, idCompany, title, road, district, city, uf, description, type, subType, status,
-      availability, bedroom, garage, suite, restroom, priceSale, priceRent, textRent, condominium,
+      id, idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status,
+      availability, bedroom, garage, suite, restroom, furnished, pets, priceSale, priceRent, textRent, condominium,
       iptu, otherPrices, buildingArea, siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction,
       images, featuredImage, platformVideo, video, slider, financing, characteristcs
     }).then((result) => {
@@ -32,6 +32,7 @@ class CreatePropertyController {
 }
 
 export { CreatePropertyController };
+
 
 
 

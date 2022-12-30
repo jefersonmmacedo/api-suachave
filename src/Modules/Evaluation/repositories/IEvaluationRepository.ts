@@ -3,10 +3,12 @@ import { Evaluation } from "../models/Evaluation";
 interface IEvaluationDTO {
   id: string;
   idCompany: string;
+  idClient: string;
+  title: string;
+  description: string;
   type: string;
   subType: string;
   status: string;
-  description: string;
   road: string;
   district: string;
   city: string;
@@ -15,6 +17,8 @@ interface IEvaluationDTO {
   garage: string;
   suite: string;
   restroom: string;
+  furnished: string;
+  pets: string;
   characteristcs: object;
   images: object;
   name: string;
@@ -23,11 +27,10 @@ interface IEvaluationDTO {
   whatsapp: string;
 }
 
-
 interface IEvaluationRepository {
   create({
-    idCompany, type, subType, status, description, road, district, city, uf, bedroom, garage, suite, restroom,
-characteristcs, images, name, email, phone, whatsapp, 
+    idCompany, idClient, title, description, type, subType, status, road, district, city, uf, bedroom, garage, suite, restroom,
+    furnished, pets, characteristcs, images, name, email, phone, whatsapp, 
   }: IEvaluationDTO): Promise<void>;
   list();
   delete({id});

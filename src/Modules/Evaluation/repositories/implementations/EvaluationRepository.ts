@@ -19,16 +19,15 @@ class EvaluationRepository implements IEvaluationRepository {
 
     return EvaluationRepository.INSTANCE;
   }
-
  
   async create({ 
-    id, idCompany, type, subType, status, description, road, district, city, uf, bedroom, garage, suite, restroom,
-    characteristcs, images, name, email, phone, whatsapp, 
+    id, idCompany, idClient, title, description, type, subType, status, road, district, city, uf, bedroom, garage, suite, restroom,
+    furnished, pets, characteristcs, images, name, email, phone, whatsapp,  
   }: IEvaluationDTO) {
     const evaluation: Evaluation = new Evaluation();
       Object.assign(evaluation, {
-        id: `imob-${id}`, _id: `imob-${id}`, idCompany, type, subType, status, description, road, district, city, uf, bedroom, garage, suite, restroom,
-        characteristcs, images, name, email, phone, whatsapp, created_at: new Date(),
+        id: `imob-${id}`, _id: `imob-${id}`, idCompany, idClient, title, description, type, subType, status,  road, district, city, uf, bedroom, garage, suite, restroom,
+        furnished, pets, characteristcs, images, name, email, phone, whatsapp, created_at: new Date(),
       });
       this.evaluation.push(evaluation);
       
@@ -41,7 +40,6 @@ class EvaluationRepository implements IEvaluationRepository {
 
   list(){ }
 
-
   async delete({id}) {
     await collections.evaluation.deleteOne(id).then((result) => {
       console.log(result)
@@ -49,7 +47,6 @@ class EvaluationRepository implements IEvaluationRepository {
       console.log(error)
     })
   }
-
 
 }
 

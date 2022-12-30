@@ -3,6 +3,8 @@ import { Property } from "../models/Property";
 interface IPropertyDTO {
   id: string;
   idCompany: string;
+  avatarCompany: string;
+  fantasyName: string;
   title: string;
   road: string;
   district: string;
@@ -17,6 +19,8 @@ interface IPropertyDTO {
   garage: string;
   suite: string;
   restroom: string;
+  furnished: string;
+  pets: string;
   priceSale: string;
   priceRent: string;
   textRent: string;
@@ -39,15 +43,15 @@ interface IPropertyDTO {
 
 interface IPropertyRepository {
   create({
-    id, idCompany, title, road, district, city, uf, description, type, subType, status,
-    availability, bedroom, garage, suite, restroom, priceSale, priceRent, textRent, condominium,
+    id, idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status,
+    availability, bedroom, garage, suite, restroom, furnished, pets, priceSale, priceRent, textRent, condominium,
     iptu, otherPrices, buildingArea, siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction,
     images, featuredImage, platformVideo, video, slider, financing, characteristcs
   }: IPropertyDTO): Promise<void>;
   list();
   update({
-    id, idCompany, title, road, district, city, uf, description, type, subType, status,
-    availability, bedroom, garage, suite, restroom, priceSale, priceRent, textRent, condominium,
+    id, idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status,
+    availability, bedroom, garage, suite, restroom, furnished, pets, priceSale, priceRent, textRent, condominium,
     iptu, otherPrices, buildingArea, siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction,
     images, featuredImage, platformVideo, video, slider, financing, characteristcs
   }: IPropertyDTO): void;
@@ -55,3 +59,4 @@ interface IPropertyRepository {
 }
 
 export { IPropertyRepository, IPropertyDTO };
+

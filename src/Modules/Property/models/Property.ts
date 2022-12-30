@@ -1,6 +1,8 @@
 class Property {
   id: string;
   idCompany: string;
+  avatarCompany: string;
+  fantasyName: string;
   title: string;
   road: string;
   district: string;
@@ -15,6 +17,8 @@ class Property {
   garage: string;
   suite: string;
   restroom: string;
+  furnished: string;
+  pets: string;
   priceSale: string;
   priceRent: string;
   textRent: string;
@@ -37,4 +41,3 @@ class Property {
 }
 
 export { Property };
-

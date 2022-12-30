@@ -8,15 +8,15 @@ class UpdatePropertyController {
   }
 
   async handle(req: Request, res: Response) {
-    const {idCompany, title, road, district, city, uf, description, type, subType, status,
-      availability, bedroom, garage, suite, restroom, priceSale, priceRent, textRent, buildingArea,
+    const {idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status,
+      availability, bedroom, garage, suite, restroom, furnished, pets, priceSale, priceRent, textRent, buildingArea,
       siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction, images, featuredImage,
       platformVideo, video, slider, financing, characteristcs, } = req.body;
     const id = req.params; 
 
 
-    await collections.property.findOneAndUpdate(id, {$set:{ idCompany, title, road, district, city, uf, description, type, subType, status,
-      availability, bedroom, garage, suite, restroom, priceSale, priceRent, textRent, buildingArea,
+    await collections.property.findOneAndUpdate(id, {$set:{ idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status,
+      availability, bedroom, garage, suite, restroom, furnished, pets, priceSale, priceRent, textRent, buildingArea,
       siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction, images, featuredImage,
       platformVideo, video, slider, financing, characteristcs,}}, {upsert: true}).then((result) => {
       return res.status(201).json(result);
@@ -28,3 +28,4 @@ class UpdatePropertyController {
 }
 
 export { UpdatePropertyController };
+

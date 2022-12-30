@@ -1,10 +1,12 @@
 class Evaluation {
   id: string;
   idCompany: string;
+  idClient: string;
+  title: string;
+  description: string;
   type: string;
   subType: string;
   status: string;
-  description: string;
   road: string;
   district: string;
   city: string;
@@ -13,13 +15,14 @@ class Evaluation {
   garage: string;
   suite: string;
   restroom: string;
+  furnished: string;
+  pets: string;
   characteristcs: object;
   images: object;
   name: string;
   email: string;
   phone: string;
   whatsapp: string;
-
   created_at: Date;
 }
 

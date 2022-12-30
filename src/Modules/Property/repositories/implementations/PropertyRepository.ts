@@ -20,17 +20,18 @@ class PropertyRepository implements IPropertyRepository {
     return PropertyRepository.INSTANCE;
   }
 
- 
+  
+  
   async create({ 
-    id, idCompany, title, road, district, city, uf, description, type, subType, status,
-    availability, bedroom, garage, suite, restroom, priceSale, priceRent, textRent, condominium,
+    id, idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status,
+    availability, bedroom, garage, suite, restroom, furnished, pets, priceSale, priceRent, textRent, condominium,
     iptu, otherPrices, buildingArea, siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction,
     images, featuredImage, platformVideo, video, slider, financing, characteristcs
   }: IPropertyDTO) {
     const property: Property = new Property();
       Object.assign(property, {
-        id: `imob-${id}`, _id: `imob-${id}`, idCompany, title, road, district, city, uf, description, type, subType, status,
-        availability, bedroom, garage, suite, restroom, priceSale, priceRent, textRent, condominium,
+        id: `imob-${id}`, _id: `imob-${id}`, idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status,
+        availability, bedroom, garage, suite, restroom, furnished, pets, priceSale, priceRent, textRent, condominium,
         iptu, otherPrices, buildingArea, siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction,
         images, featuredImage, platformVideo, video, slider, financing, characteristcs, created_at: new Date(),
       });
@@ -45,8 +46,8 @@ class PropertyRepository implements IPropertyRepository {
 
   list(){ }
 
-  update({  id, idCompany, title, road, district, city, uf, description, type, subType, status,
-    availability, bedroom, garage, suite, restroom, priceSale, priceRent, textRent, buildingArea,
+  update({  id, idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status,
+    availability, bedroom, garage, suite, restroom, furnished, pets, priceSale, priceRent, textRent, buildingArea,
     siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction, images, featuredImage,
     platformVideo, video, slider, financing, characteristcs, }):void {}
 

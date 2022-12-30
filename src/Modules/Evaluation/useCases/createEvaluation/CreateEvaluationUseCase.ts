@@ -5,10 +5,12 @@ import { Request, Response } from "express";
 interface IRequest {
   id: string;
   idCompany: string;
+  idClient: string;
+  title: string;
+  description: string;
   type: string;
   subType: string;
   status: string;
-  description: string;
   road: string;
   district: string;
   city: string;
@@ -17,6 +19,8 @@ interface IRequest {
   garage: string;
   suite: string;
   restroom: string;
+  furnished: string;
+  pets: string;
   characteristcs: object;
   images: object;
   name: string;
@@ -31,13 +35,13 @@ class CreateEvaluationUseCase {
   }
   
   async execute({
-    id, idCompany, type, subType, status, description, road, district, city, uf, bedroom, garage, suite, restroom,
-    characteristcs, images, name, email, phone, whatsapp, 
+    id, idCompany, idClient, title, description, type, subType, status, road, district, city, uf, bedroom, garage, suite, restroom,
+    furnished, pets, characteristcs, images, name, email, phone, whatsapp, 
   }: IRequest): Promise<void> {
 
       await this.EvaluationRepository.create({
-        id, idCompany, type, subType, status, description, road, district, city, uf, bedroom, garage, suite, restroom,
-        characteristcs, images, name, email, phone, whatsapp, 
+        id, idCompany, idClient, title, description, type, subType, status, road, district, city, uf, bedroom, garage, suite, restroom,
+        furnished, pets, characteristcs, images, name, email, phone, whatsapp, 
       });
 
   }

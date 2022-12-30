@@ -11,6 +11,7 @@ export const collections: {
   favorite?:mongoDB.Collection,
   contact?:mongoDB.Collection,
   scheduling?:mongoDB.Collection,
+  schedulingEvaluation?:mongoDB.Collection,
   clientCompany?:mongoDB.Collection,
   bank?:mongoDB.Collection,
   negotiations?:mongoDB.Collection,
@@ -88,6 +89,11 @@ export async function connectToDatabase() {
       // scheduling
       const schedulingCollection: mongoDB.Collection = db.collection(process.env.SCHEDULING_COLLECTION_NAME);
       collections.scheduling = schedulingCollection;
+      // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${favoriteCollection.collectionName}`);
+      
+      // schedulingEvaluation
+      const schedulingEvaluationCollection: mongoDB.Collection = db.collection(process.env.SCHEDULINGEVALUATION_COLLECTION_NAME);
+      collections.schedulingEvaluation = schedulingEvaluationCollection;
       // console.log(`Successfully connected to database: ${db.databaseName} and collection: ${favoriteCollection.collectionName}`);
 
       const clientCompanyCollection: mongoDB.Collection = db.collection(process.env.CLIENTCOMPANY_COLLECTION_NAME);

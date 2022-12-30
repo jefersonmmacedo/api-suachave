@@ -33,11 +33,9 @@ import { processNotesRoutes } from "./negotiations/processNotes.routes";
 import { RoomRouter } from "./chatMessage/room.routes";
 import { MessageRouter } from "./chatMessage/message.routes";
 import { DateReadyRouter } from "./DateReady/dateReady.routes";
-
-
+import { SchedulingEvaluationRouter } from "./schedulingEvaluation/schedulingEvaluation.routes";
 
 const router = Router();
-
 
 connectToDatabase()
   .then(() => {
@@ -52,6 +50,7 @@ connectToDatabase()
     router.use("/paymentRent", paymentRentRoutes);
     router.use("/favorite", favoriteRoutes);
     router.use("/scheduling", SchedulingRouter);
+    router.use("/schedulingEvaluation", SchedulingEvaluationRouter);
     router.use("/contact", contactRoutes);
     router.use("/bank", bankRoutes);
     router.use("/negotiations", negotiationsRoutes);
