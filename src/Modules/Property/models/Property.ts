@@ -12,6 +12,8 @@ class Property {
   type: string;
   subType: string;
   status: string;
+  newProperty: string;
+  firstLease: string;
   availability: string;
   bedroom: string;
   garage: string;

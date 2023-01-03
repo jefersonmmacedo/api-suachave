@@ -8,14 +8,14 @@ class UpdatePropertyController {
   }
 
   async handle(req: Request, res: Response) {
-    const {idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status,
+    const {idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status, newProperty, firstLease,
       availability, bedroom, garage, suite, restroom, furnished, pets, priceSale, priceRent, textRent, buildingArea,
       siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction, images, featuredImage,
       platformVideo, video, slider, financing, characteristcs, } = req.body;
     const id = req.params; 
 
 
-    await collections.property.findOneAndUpdate(id, {$set:{ idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status,
+    await collections.property.findOneAndUpdate(id, {$set:{ idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status, newProperty, firstLease,
       availability, bedroom, garage, suite, restroom, furnished, pets, priceSale, priceRent, textRent, buildingArea,
       siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction, images, featuredImage,
       platformVideo, video, slider, financing, characteristcs,}}, {upsert: true}).then((result) => {

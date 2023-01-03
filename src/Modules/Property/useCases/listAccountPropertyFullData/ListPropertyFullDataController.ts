@@ -10,6 +10,8 @@ class ListPropertyFullDataController {
 
   async handle(req: Request, res: Response) {
     const {availability, status} = req.params;
+    const type = req.query.type;
+    const subType = req.query.subType;
     const uf = req.query.uf;
     const city = req.query.city;
     const bedroom = req.query.bedroom;
@@ -17,13 +19,22 @@ class ListPropertyFullDataController {
     const garage = req.query.garage;
     const suite = req.query.suite;
 
+    console.log({availability: availability})
+    console.log({status: status})
     console.log({bedroom: bedroom})
     console.log({restroom: restroom})
     console.log({garage: garage})
+    console.log({suite: suite})
+    console.log({type: type})
+    console.log({subType: subType})
+    console.log({city: city})
+    console.log({uf: uf})
 
    await collections.property.find({
     "$and": [{ availability: availability },
     { status: status},
+    { type: type},
+    { subType: subType},
     { uf: uf},
     { city: city},
     { bedroom: { $gte: bedroom } },
@@ -36,11 +47,11 @@ class ListPropertyFullDataController {
         res.status(500).json(err)
       } else {
         res.status(200).json(result)
+        console.log(result)
       }
      // console.log(result)
       return result;
      })
-
   }
 }
 

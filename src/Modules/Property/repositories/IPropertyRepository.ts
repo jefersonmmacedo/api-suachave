@@ -14,6 +14,8 @@ interface IPropertyDTO {
   type: string;
   subType: string;
   status: string;
+  newProperty: string;
+  firstLease: string;
   availability: string;
   bedroom: string;
   garage: string;
@@ -43,14 +45,14 @@ interface IPropertyDTO {
 
 interface IPropertyRepository {
   create({
-    id, idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status,
+    id, idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status, newProperty, firstLease,
     availability, bedroom, garage, suite, restroom, furnished, pets, priceSale, priceRent, textRent, condominium,
     iptu, otherPrices, buildingArea, siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction,
     images, featuredImage, platformVideo, video, slider, financing, characteristcs
   }: IPropertyDTO): Promise<void>;
   list();
   update({
-    id, idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status,
+    id, idCompany, avatarCompany, fantasyName, title, road, district, city, uf, description, type, subType, status, newProperty, firstLease,
     availability, bedroom, garage, suite, restroom, furnished, pets, priceSale, priceRent, textRent, condominium,
     iptu, otherPrices, buildingArea, siglaBuildingArea, totalArea, siglaTotalArea, yearOfConstruction,
     images, featuredImage, platformVideo, video, slider, financing, characteristcs
