@@ -3,7 +3,7 @@ import { WaitingList } from "../models/WaitingList";
 interface ICreateWaitingListDTO {
   id: string;
   type: string;
-  nameFamtasy: string;
+  nameFantasy: string;
   whatsapp: string;
   email: string;
   cep: string;
@@ -14,10 +14,10 @@ interface ICreateWaitingListDTO {
  
 interface IWaitingListRepository {
   create({
-   type, nameFamtasy, whatsapp, email, cep, city, uf,
+   type, nameFantasy, whatsapp, email, cep, city, uf,
   }: ICreateWaitingListDTO): void;
   update({
-   id, type, nameFamtasy, whatsapp, email, cep, city, uf,
+   id, type, nameFantasy, whatsapp, email, cep, city, uf,
   }: ICreateWaitingListDTO): void;
   list();
   delete({id});

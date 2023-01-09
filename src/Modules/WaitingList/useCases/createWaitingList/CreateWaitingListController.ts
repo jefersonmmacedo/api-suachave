@@ -8,10 +8,10 @@ class CreateWaitingListController {
   }
 
   handle(req: Request, res: Response): Response {
-    const { id, type, nameFamtasy, whatsapp, email, cep, city, uf, } = req.body;
+    const { id, type, nameFantasy, whatsapp, email, cep, city, uf, } = req.body;
 
     this.createWaitingListUseCase.execute({
-      id, type, nameFamtasy, whatsapp, email, cep, city, uf,
+      id, type, nameFantasy, whatsapp, email, cep, city, uf,
     });
 
 

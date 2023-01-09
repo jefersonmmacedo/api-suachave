@@ -1,7 +1,7 @@
 class WaitingList {
   id: string;
   type: string;
-  nameFamtasy: string;
+  nameFantasy: string;
   whatsapp: string;
   email: string;
   cep: string;

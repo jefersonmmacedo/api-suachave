@@ -21,13 +21,13 @@ class WaitingListRepository implements IWaitingListRepository {
   }
 
   async create({
-    type, nameFamtasy, whatsapp, email, cep, city, uf,
+    type, nameFantasy, whatsapp, email, cep, city, uf,
   }: ICreateWaitingListDTO) {
     const waitingList: WaitingList = new WaitingList();
     const _id = uuidv4()
     Object.assign(waitingList, {
       _id, id: _id,
-      type, nameFamtasy, whatsapp, email, cep, city, uf,
+      type, nameFantasy, whatsapp, email, cep, city, uf,
       created_at: new Date()
     });
 
@@ -42,7 +42,7 @@ class WaitingListRepository implements IWaitingListRepository {
 
   list(){  }
 
-  async update({ id, type, nameFamtasy, whatsapp, email, cep, city, uf,}){}
+  async update({ id, type, nameFantasy, whatsapp, email, cep, city, uf,}){}
 
   async delete({id}) {
     await collections.waitingList.deleteOne(id).then((result) => {

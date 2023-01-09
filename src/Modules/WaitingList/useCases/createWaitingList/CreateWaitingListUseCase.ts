@@ -3,7 +3,7 @@ import { IWaitingListRepository } from "../../repositories/IWaitingListRepositor
 interface IRequest {
   id: string;
   type: string;
-  nameFamtasy: string;
+  nameFantasy: string;
   whatsapp: string;
   email: string;
   cep: string;
@@ -16,10 +16,10 @@ class CreateWaitingListUseCase {
     " ";
   }
 
-  execute({ id, type, nameFamtasy, whatsapp, email, cep, city, uf, }: IRequest): void {
+  execute({ id, type, nameFantasy, whatsapp, email, cep, city, uf, }: IRequest): void {
 
     this.WaitingListRepository.create({
-      id, type, nameFamtasy, whatsapp, email, cep, city, uf,
+      id, type, nameFantasy, whatsapp, email, cep, city, uf,
     });
   }
 }
