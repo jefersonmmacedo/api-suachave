@@ -36,6 +36,7 @@ export const collections: {
   messageReadData?:mongoDB.Collection,
   roomReadData?:mongoDB.Collection,
   notificationReadData?:mongoDB.Collection,
+  waitingList?:mongoDB.Collection,
   
  } = {}
 
@@ -197,6 +198,9 @@ export async function connectToDatabase() {
 
           const notificationReadDataCollection: mongoDB.Collection = db.collection(process.env.NOTIFICATIONREADDATA_COLLECTION_NAME);
           collections.notificationReadData = notificationReadDataCollection;
+
+          const waitingListCollection: mongoDB.Collection = db.collection(process.env.WAITINGLIST_COLLECTION_NAME);
+          collections.waitingList = waitingListCollection;
 
       }
 

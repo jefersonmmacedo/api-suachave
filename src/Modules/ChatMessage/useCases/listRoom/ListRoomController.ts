@@ -16,7 +16,6 @@ class ListRoomController {
       if(err) {
         res.status(500).json(err)
       } else {
-        console.log(result)
         res.status(200).json(result)
       }
       return result;

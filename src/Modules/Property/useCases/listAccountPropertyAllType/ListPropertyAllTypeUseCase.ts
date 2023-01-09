@@ -13,7 +13,6 @@ class ListPropertyAllTypeUseCase {
    // console.log(result)
     return result;
    })
-console.log(PropertyAll)
         }
   }
 

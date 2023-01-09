@@ -1,15 +1,15 @@
 import { Request, Response } from "express";
 import { collections } from "../../../../../services/database.service";
 
-import { ListAlertUseCase } from "./ListAlertUseCase";
+import { ListWaitingListUseCase } from "./ListWaitingListUseCase";
 
-class ListAlertController {
-  constructor(private listAlertUseCase: ListAlertUseCase) {
+class ListWaitingListController {
+  constructor(private listWaitingListUseCase: ListWaitingListUseCase) {
     ("");
   }
 
   async handle(req: Request, res: Response) {
-   await collections.alert.find().toArray(function(err, result){
+   await collections.waitingList.find().toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
       } else {
@@ -21,4 +21,4 @@ class ListAlertController {
   }
 }
 
-export { ListAlertController };
+export { ListWaitingListController };

@@ -10,10 +10,8 @@ class ListPropertyFullDataUseCase {
   async execute() {
    const Property = await collections.property.find({});
    const PropertyAll = Property.toArray(function(err, result){
-   // console.log(result)
     return result;
    })
-console.log(PropertyAll)
         }
   }
 

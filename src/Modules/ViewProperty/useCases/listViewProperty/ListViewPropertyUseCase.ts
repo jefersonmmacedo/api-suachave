@@ -10,7 +10,6 @@ class ListViewPropertyUseCase {
   async execute() {
    const ViewProperty = await collections.viewProperty.find({});
    const ViewPropertyAll = ViewProperty.toArray(function(err, result){
-    console.log(result)
     return result;
    })
 console.log(ViewPropertyAll)

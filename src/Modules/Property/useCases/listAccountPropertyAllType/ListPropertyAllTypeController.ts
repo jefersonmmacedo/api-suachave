@@ -18,7 +18,6 @@ class ListPropertyAllTypeController {
       } else {
         res.status(200).json(result)
       }
-     // console.log(result)
       return result;
      })
 

@@ -34,6 +34,7 @@ import { RoomRouter } from "./chatMessage/room.routes";
 import { MessageRouter } from "./chatMessage/message.routes";
 import { DateReadyRouter } from "./DateReady/dateReady.routes";
 import { SchedulingEvaluationRouter } from "./schedulingEvaluation/schedulingEvaluation.routes";
+import { WaitingListRouter } from "./WaitingList/waitingList.routes";
 
 const router = Router();
 
@@ -74,6 +75,7 @@ connectToDatabase()
     router.use("/contracts", contractsRoutes);
     router.use("/processnotes", processNotesRoutes);
     router.use("/dateready", DateReadyRouter);
+    router.use("/waitingList", WaitingListRouter);
   }).catch((error: Error) => {
     console.error("Database connection failed", error);
     process.exit();

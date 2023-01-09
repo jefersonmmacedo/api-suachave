@@ -10,7 +10,6 @@ class ListClientCompanyAdmController {
 
   async handle(req: Request, res: Response) {
     const idCompany = req.params;
-    console.log(idCompany);
    await collections.clientCompany.find(idCompany).toArray(function(err, result){
       if(err) {
         res.status(500).json(err)
