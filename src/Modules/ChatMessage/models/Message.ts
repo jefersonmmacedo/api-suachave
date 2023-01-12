@@ -2,6 +2,7 @@ class Message {
   id: string;
   idRoom: string;
   idAccount: string;
+  idFriend: string;
   name: string;
   avatar: string;
   text: string;

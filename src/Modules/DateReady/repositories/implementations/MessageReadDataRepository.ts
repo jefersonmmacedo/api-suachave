@@ -20,6 +20,14 @@ class MessageReadDataRepository implements IMessageReadDataRepository {
     return MessageReadDataRepository.INSTANCE;
   }
 
+  async findById(idUser: string): Promise<void>  {
+    const findId = await collections.messageReadData.findOne({idUser})
+    if(findId) {
+      throw new Error("Id already exists!")
+    } 
+  }
+
+
  async create({
   idUser, dateReady,
   }: ICreateMessageReadDataDTO) {

@@ -4,6 +4,7 @@ interface ICreateMessageDTO {
   id: string;
   idRoom: string;
   idAccount: string;
+  idFriend: string;
   name: string;
   avatar: string;
   text: string;
@@ -13,10 +14,10 @@ interface ICreateMessageDTO {
  
 interface IMessageRepository {
   create({
-   idRoom, idAccount, name, avatar, text, link, type,
+   idRoom, idAccount, idFriend, name, avatar, text, link, type,
   }: ICreateMessageDTO): void;
   update({
-   id, idRoom, idAccount, name, avatar, text, link, type,
+   id, idRoom, idAccount, idFriend, name, avatar, text, link, type,
   }: ICreateMessageDTO): void;
   list();
   delete({id});

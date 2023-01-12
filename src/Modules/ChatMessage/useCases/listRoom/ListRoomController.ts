@@ -11,7 +11,6 @@ class ListRoomController {
   async handle(req: Request, res: Response) {
     const {idProperty, idCompany, idClient} = req.params
 
-    console.log(idProperty, idCompany, idClient)
    await collections.rooms.find({idProperty, idCompany}).toArray(function(err, result){
       if(err) {
         res.status(500).json(err)

@@ -8,10 +8,10 @@ class CreateRoomReadDataController {
   }
 
   handle(req: Request, res: Response): Response {
-    const { id, idRoom, dateReady } = req.body;
+    const { id, idUser, idRoom, dateReady } = req.body;
 
     this.createRoomReadDataUseCase.execute({
-      id, idRoom, dateReady
+      id, idUser, idRoom, dateReady
     });
 
 

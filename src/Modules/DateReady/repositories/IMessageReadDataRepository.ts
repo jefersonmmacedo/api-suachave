@@ -10,6 +10,7 @@ interface IMessageReadDataRepository {
   create({
     idUser, dateReady,
   }: ICreateMessageReadDataDTO): void;
+  findById(idUser: string): Promise<void>;
   update({
    id, idUser, dateReady,
   }: ICreateMessageReadDataDTO): void;

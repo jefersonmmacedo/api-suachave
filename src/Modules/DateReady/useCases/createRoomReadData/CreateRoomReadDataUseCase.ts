@@ -2,6 +2,7 @@ import { IRoomReadDataRepository } from "../../repositories/IRoomReadDataReposit
 
 interface IRequest {
   id: string;
+  idUser: string;
   idRoom: string;
   dateReady: string;
 }
@@ -11,9 +12,9 @@ class CreateRoomReadDataUseCase {
     " ";
   }
 
-  execute({ id, idRoom, dateReady }: IRequest): void {
+  execute({ id, idUser, idRoom, dateReady }: IRequest): void {
     this.RoomReadDataRepository.create({
-      id, idRoom, dateReady
+      id, idUser, idRoom, dateReady
     });
   }
 }

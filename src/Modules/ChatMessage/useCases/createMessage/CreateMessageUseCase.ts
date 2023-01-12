@@ -4,6 +4,7 @@ interface IRequest {
   id: string;
   idRoom: string;
   idAccount: string;
+  idFriend: string;
   name: string;
   avatar: string;
   text: string;
@@ -16,9 +17,9 @@ class CreateMessageUseCase {
     " ";
   }
 
-  execute({ id, idRoom, idAccount, name, avatar, text, link, type, }: IRequest): void {
+  execute({ id, idRoom, idAccount, idFriend, name, avatar, text, link, type, }: IRequest): void {
     this.MessageRepository.create({
-      id, idRoom, idAccount, name, avatar, text, link, type,
+      id, idRoom, idAccount, idFriend, name, avatar, text, link, type,
     });
   }
 }

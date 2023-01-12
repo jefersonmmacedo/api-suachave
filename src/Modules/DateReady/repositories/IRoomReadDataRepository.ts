@@ -2,16 +2,18 @@ import { RoomReadData } from "../models/RoomReadData";
 
 interface ICreateRoomReadDataDTO {
   id: string;
+  idUser: string;
   idRoom: string;
   dateReady: string;
 }
 
 interface IRoomReadDataRepository {
   create({
-    idRoom, dateReady,
+    idUser, idRoom, dateReady,
   }: ICreateRoomReadDataDTO): void;
+  findById(idUser: string): Promise<void>;
   update({
-   id, idRoom, dateReady,
+   id, idUser, idRoom, dateReady,
   }: ICreateRoomReadDataDTO): void;
   list();
   delete({id});

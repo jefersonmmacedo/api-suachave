@@ -6,7 +6,7 @@ interface INotificationDTO {
   text: string;
   type: string;
   link: string;
-  view: string;
+  view: boolean;
 }
 
   

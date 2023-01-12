@@ -20,6 +20,7 @@ interface RoomUser  {
 interface Messages {
   room: string;
   idAccount: string;
+  idFriend: string;
   text: string;
   link: string;
   type: string;
@@ -77,16 +78,14 @@ io.on("connection", (socket) => {
 
     socket.emit("rooms", rooms);
 
-    console.log("rooms")
-    console.log(rooms)
-    console.log(rooms.length)
-  
+ 
     socket.on("message", (data) => {
       console.log("NOva mensagem WebSocket");
       console.log(data);
       const message: Messages = {
         room: data.room,
         idAccount: data.idAccount,
+        idFriend: data.idFriend,
         name: data.name,
         text: data.text,
         link: data.link,
@@ -99,6 +98,7 @@ io.on("connection", (socket) => {
       collections.messagesRooms.insertOne({
         idRoom: data.room,
         idAccount: data.idAccount,
+        idFriend: data.idFriend,
         text: data.text,
         link: data.link,
         type: data.type,
@@ -108,19 +108,6 @@ io.on("connection", (socket) => {
         id: data.id
       })
       messages.push(message);
-
-      // if(rooms.length === 0) {
-      //   collections.notifications.insertOne({
-      //     idAccount: data.idAccount,
-      //     text: `${data.idAccount}, enviou uma nova mensagem.`,
-      //     idFriend: rooms. === data.idAccount ? rooms.idFriend : data.idAccount,
-      //     avatar: data.avatar,
-      //     username: data.username,
-      //     nickname: data.nickname,
-      //     created_at: data.created_at,
-      //     id: uuidv4()}
-      //   )
-      // }
 
       socket.to(data.room).emit("message", message);
     });

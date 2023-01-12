@@ -20,14 +20,24 @@ class RoomReadDataRepository implements IRoomReadDataRepository {
     return RoomReadDataRepository.INSTANCE;
   }
 
+
+  async findById(idUser: string): Promise<void>  {
+    const findId = await collections.roomReadData.findOne({idUser})
+    if(findId) {
+      throw new Error("Id already exists!")
+    } 
+  }
+
+
+
  async create({
-  idRoom, dateReady
+  idUser, idRoom, dateReady
   }: ICreateRoomReadDataDTO) {
     const roomReadData: RoomReadData = new RoomReadData();
     const _id = uuidv4()
     Object.assign(roomReadData, {
       _id, id: _id,
-      idRoom, dateReady,
+      idUser, idRoom, dateReady,
       created_at: new Date()
     });
 

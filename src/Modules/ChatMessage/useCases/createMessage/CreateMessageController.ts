@@ -8,10 +8,10 @@ class CreateMessageController {
   }
 
   handle(req: Request, res: Response): Response {
-    const { id, idRoom, idAccount, name, avatar, text, link, type, } = req.body;
+    const { id, idRoom, idAccount, idFriend, name, avatar, text, link, type, } = req.body;
 
     this.createMessageUseCase.execute({
-      id, idRoom, idAccount, name, avatar, text, link, type,
+      id, idRoom, idAccount, idFriend, name, avatar, text, link, type,
     });
 
 

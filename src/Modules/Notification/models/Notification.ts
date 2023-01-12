@@ -4,7 +4,7 @@ class Notification {
   text: string;
   type: string;
   link: string;
-  view: string;
+  view: boolean;
   created_at: Date;
 }
 

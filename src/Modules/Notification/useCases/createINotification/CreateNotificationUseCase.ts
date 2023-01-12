@@ -7,7 +7,7 @@ interface IRequest {
   text: string;
   type: string;
   link: string;
-  view: string;
+  view: boolean;
 }
 
 class CreateNotificationUseCase {

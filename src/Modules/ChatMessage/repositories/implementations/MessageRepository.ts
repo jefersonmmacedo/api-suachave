@@ -21,13 +21,13 @@ class MessageRepository implements IMessageRepository {
   }
 
  async create({
-  idRoom, idAccount, name, avatar, text, link, type,
+  idRoom, idAccount, idFriend, name, avatar, text, link, type,
   }: ICreateMessageDTO) {
     const message: Message = new Message();
     const _id = uuidv4()
     Object.assign(message, {
       _id, id: _id,
-      idRoom, idAccount, name, avatar, text, link, type,
+      idRoom, idAccount, idFriend, name, avatar, text, link, type,
       created_at: new Date()
     });
 
