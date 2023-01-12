@@ -309,12 +309,13 @@ mailRoutes.post("/username", async (req, res) =>  {
 
 
  let transporter = nodemailer.createTransport({
-    host: "email-ssl.com.br",
-    port: 465,
-    auth: {
-      user: "contato@suachave.com.br",
-      pass: "suachave2021*"
-    }
+  host: "smtp.umbler.com",
+  port: 587,
+  secure: false,
+  auth: {
+    user: "contato@suachave.com.br",
+    pass: "211902fluminense@"
+  }
   });
 
 
@@ -353,12 +354,13 @@ mailRoutes.post("/passwordcode", async (req, res) =>  {
 
 
  let transporter = nodemailer.createTransport({
-    host: "email-ssl.com.br",
-    port: 465,
-    auth: {
-      user: "contato@suachave.com.br",
-      pass: "suachave2021*"
-    }
+  host: "smtp.umbler.com",
+  port: 587,
+  secure: false,
+  auth: {
+    user: "contato@suachave.com.br",
+    pass: "211902fluminense@"
+  }
   })
 
   // send mail with defined transport object
@@ -371,7 +373,48 @@ mailRoutes.post("/passwordcode", async (req, res) =>  {
     Aqui está. Utilize-o para redefinir seu acesso:<p/> 
     <p>Seu código:</p>
     <h3>${code.code}</h3>
-    <p>Acesse o link para alterar sua senha: <a href="https://suachave.com.br/recuperationcode/${mail.mail}" target="_blank">Recuperar minha senha</a> <br/><br/>
+    <p>Acesse o link para alterar sua senha: <a href="https://suachave.com.br/recuperar-codigo/${mail.mail}" target="_blank">Recuperar minha senha</a> <br/><br/>
+    Em caso de dúvida, fale conosco. <br/>
+    Whatsapp: (22)99791-0510<br/>
+    contato@suachave.com.br <br/><br/>
+    
+    suachave <a href="https://www.suachave.com.br" target="_blank">www.suachave.com.br</a></p>`, // html body.
+  });
+
+
+  if(info) {
+    res.status(200).json({"message":"Email enviado com sucesso"});
+console.log("Email com código de recuperação enviado com sucesso")
+}
+
+});
+mailRoutes.post("/newpassword", async (req, res) =>  {
+  const mail = req.body;
+  console.log(mail.mail)
+
+
+ let transporter = nodemailer.createTransport({
+  host: "smtp.umbler.com",
+  port: 587,
+  secure: false,
+  auth: {
+    user: "contato@suachave.com.br",
+    pass: "211902fluminense@"
+  }
+  })
+
+  // send mail with defined transport object
+  let info = await transporter.sendMail({
+    from: '"Sucesso!" <contato@suachave.com.br>', // sender address
+    to: mail.mail, // list of receivers
+    subject: "Senha alterada 🔒", // Subject line
+    text: "Senha alterada 🔒", // plain text body
+    html: `<p>Sua senha foi alterada com sucesso.<br/>
+    Faça login com seu e-mail e nova senha:<p/> 
+
+    <p>Caso não tenha solicitado alteração de senha:</p><br/>
+    <p>Entre em contato com nossa equipe!</p>
+   
     Em caso de dúvida, fale conosco. <br/>
     Whatsapp: (22)99791-0510<br/>
     contato@suachave.com.br <br/><br/>
